@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<html>
+    <head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<meta name="description" content="Jennifer Sánchez Dueñas | Diseño gráfico y web">
+    	
+        <title>Jennifersd</title>
+        
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <header>
+        
+        </header>
+    	{% block content %}
+        {% endblock %}
+    </body>
+</html>
