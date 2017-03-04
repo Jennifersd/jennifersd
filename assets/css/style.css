@@ -29,15 +29,61 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .hub .header-wrap {
-    padding: 32px 24px;
-    background: #212121;
+    padding: 10px 24px;
+    background: #262626;
     z-index: 2;
     cursor: default;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: auto;
+    left: 0;
+    box-shadow: 0;
+    box-sizing: border-box;
+    z-index: 4;
 }
 
 .header-container{
-	
+	position: relative;
+    /*background: transparent url(images/hub/logo.svg) no-repeat left center;
+    background-size: 48px 48px;
+    padding-left: 89px;*/
+    max-width: 1280px;
+    height: 56.15px;
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
 }
+
+.header-container h1{
+    background: transparent url('/static/img/logo-jennifersd.svg') no-repeat left center;
+    background-size: 218px 56.15px;
+    margin:0px;
+}
+
+.header-container h1:hover{
+    opacity:.8;
+    -moz-transition:all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -o-transition:all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -webkit-transition:all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+}
+
+.header-container h1 a{
+    display: block;
+    margin: 0;
+    text-indent: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 56.15px;
+    opacity:0;
+}
+
+
 
 
 
@@ -51,9 +97,10 @@
 }
 
 .hub .-material {
-    background: #212121;
+    background: #262626;
     color: #fff;
     padding-top: 0;
+
 }
 
 .blocks-container{
@@ -61,3 +108,90 @@
     padding: 0 48px;
     margin: auto;
 }
+
+.-material-block-text{
+	position: relative;
+    padding-bottom: 50%;
+    margin-bottom: 8px;
+    height: 0;
+}
+
+.wrapper{
+	box-sizing: border-box;
+    padding-left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    z-index: 3;
+}
+
+.-material-block-text h2{
+    font-size: 20px;
+    line-height: 28px;
+    margin: 0 0 24px;
+    width: 33.33%;
+    -webkit-font-smoothing: antialiased;
+}
+
+.-material-block-text a{
+	
+}	
+
+.hub .-guidelines {
+    background: #ffffff;
+}
+
+.hub .-guidelines .header-guidelines.-locked-bottom {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    height: 56px;
+    transform: translateY(-56px);
+    transition: height 0.2s ease-out;
+    z-index: 4;
+    
+    width: 100%;
+    left: 0;
+    box-sizing: border-box;
+}
+
+.header-guidelines{
+    padding: 16px 48px;
+    background: #ffffff;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.header-guidelines h2{
+	margin:0px;
+}
+
+.hub .-tools {
+    background: #eee;
+    color: #212121;
+}
+
+.hub .-tools .header-tools.-locked-bottom {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    height: 56px;
+    transition: height 0.2s ease-out;
+    z-index: 5;
+        width: 100%;
+    left: 0;
+    box-sizing: border-box;
+}
+
+.header-tools {
+    background: #eee;
+    z-index: 1;
+    padding: 16px 48px;
+    cursor: pointer;
+    
+}
+
+.header-tools h2{
+	margin:0px;
+}
+

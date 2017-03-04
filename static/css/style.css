@@ -33,11 +33,41 @@
     background: #212121;
     z-index: 2;
     cursor: default;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: auto;
+    left: 0;
+    box-shadow: 0;
+    box-sizing: border-box;
+    z-index: 4;
 }
 
 .header-container{
-	
+	position: relative;
+    /*background: transparent url(images/hub/logo.svg) no-repeat left center;
+    background-size: 48px 48px;
+    padding-left: 89px;*/
+    max-width: 1280px;
+    height: 56.15px;
+    box-sizing: border-box;
 }
+
+.header-container h1{
+    background: transparent url('/static/img/logo-jennifersd.svg') no-repeat left center;
+    background-size: 218px 56.15px;
+}
+
+.header-container h1 a{
+    display: block;
+    margin: 0;
+    text-indent: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 56.15px;
+}
+
+
 
 
 
