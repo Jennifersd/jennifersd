@@ -2,11 +2,24 @@
 
  {% block content %}
 	{% for post in posts %}
-      <div class="container">
-      	<p>Author : {{ post.author }}</p>
-          <p>published: {{ post.published_date }}</p>
-          <h2><a href="">{{ post.title }}</a></h2>
-          <p>{{ post.text|linebreaksbr }}</p>
-      </div>
+		<section class="drawer -material">
+			<div class="blocks-container">
+			</div>
+		</section>
+		<section class="drawer -blog">
+			<div class="blog">
+		    	<p>Author : {{ post.author }}</p>
+		        <p>published: {{ post.published_date }}</p>
+		        <h2><a href="">{{ post.title }}</a></h2>
+		        <p>{{ post.text|linebreaksbr }}</p>
+	    	</div>
+		</section>
+		<section class="drawer -guidelines">
+		
+		</section>
+		<section class="drawer -tools">
+		
+		</section>
+	
   	{% endfor %}
  {% endblock content %}

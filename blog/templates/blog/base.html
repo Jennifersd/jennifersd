@@ -7,15 +7,20 @@
     	
         <title>Jennifersd</title>
         
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+        
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     </head>
-    <body>
-        <header>
-        
-        </header>
-    	{% block content %}
-        {% endblock %}
+    <body class="hub">
+    	<div class="container">
+	        {% include 'blog/header.html' %}
+	        
+	    	{% block content %}
+	        {% endblock %} 
+	        
+	        {% include 'blog/footer.html' %} 
+		</div>
     </body>
 </html>
