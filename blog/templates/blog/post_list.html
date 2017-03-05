@@ -9,6 +9,25 @@
 						<a class="-material-link">Saber más</a>
 					</div>
 				</div>
+				<div class="-material-block-grid">
+					<ul class="grid">
+						<li class="block-wrap -poster-wrap -tablet-poster">
+							<a href="" class="block -poster -hero-card -bg-hero">
+								1
+							</a>
+						</li>
+						<li class="block-wrap -poster-wrap -tablet-poster -last">
+							<a href="" class="block -poster -stage -bg-stage">
+								2
+							</a>
+						</li>
+						<li class="block-wrap -poster-wrap -tablet-card -last">
+							<a href="" class="block -poster -gallery -bg-spec">
+								3
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</section>
 		
@@ -17,7 +36,7 @@
 				{% for post in posts %}
 		    	<p>Author : {{ post.author }}</p>
 		        <p>published: {{ post.published_date }}</p>
-		        <h2><a href="">{{ post.title }}</a></h2>
+		        <h2><a href="{% url 'blog.views.post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
 		        <p>{{ post.text|linebreaksbr }}</p>
 		        {% endfor %}
 	    	</div>
@@ -25,18 +44,22 @@
   	
   	<section class="drawer -guidelines">
   		<div class="header-guidelines -locked-bottom">
-  			<h2>
-  				Guidelines
-  			</h2>
+  			<div class="title-container">
+	  			<h2>
+	  				Guidelines
+	  			</h2>
+	  		</div>
   		</div>
 		<div class="blocks-container">
 		</div>
 	</section>
 	<section class="drawer -tools">
 		<div class="header-tools -locked-bottom">
-  			<h2>
-  				Tools
-  			</h2>
+			<div class="title-container">
+	  			<h2>
+	  				Tools
+	  			</h2>
+	  		</div>
   		</div>
 		<div class="blocks-container">
 		</div>		

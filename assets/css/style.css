@@ -96,6 +96,9 @@
     padding: 120px 0;
 }
 
+/* Section 1 - Home
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
 .hub .-material {
     background: #262626;
     color: #fff;
@@ -137,6 +140,111 @@
 	
 }	
 
+
+.-material-block-grid{
+	
+}
+
+.-material-block-grid .grid{
+	display: -webkit-box;      
+	display: -moz-box;        
+	display: -ms-flexbox;      
+	display: -webkit-flex;     
+	display: flex;
+	-webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap; 
+    flex-wrap: wrap;
+    min-height: initial;
+    min-width: initial;
+}
+
+.-material-block-grid .grid{
+	list-style-type:none;
+}
+
+.-material-block-grid .block-wrap{
+	margin: 0 8px 0 0;	
+}
+
+.-material-block-grid .-poster-wrap{
+	flex-basis: 0;
+    flex-grow: 6;
+    width: 100%;
+    position: relative;	
+} 
+
+.-material-block-grid .-poster-wrap:before {
+    content: "";
+    display: block;
+    padding-top: 150%;
+}
+
+.-material-block-grid .-tablet-poster{
+	
+}
+
+.-material .-material-block-grid .-tablet-poster.-last {
+    margin-right: 8px;
+}
+
+.-material-block-grid .block-wrap.-last {
+    margin-right: 0;
+}
+
+.-material-block-grid .-poster-wrap .-poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.-material-block-grid .block {
+    box-sizing: border-box;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24);
+    transition: box-shadow 0.2s ease;
+}
+
+.-material-block-grid .-bg-hero {
+    background: #3C3C3C;
+    color: #ffffff;
+}
+
+.-material-block-grid .block.-stage {
+    color: #ffffff;
+}
+
+.-material-block-grid .-bg-stage {
+    background: #ff3d00;
+}
+
+.-material-block-grid .block.-gallery {
+    margin-right: 0;
+}
+
+.-material-block-grid .-bg-spec {
+    background: #FFC400;
+    color: #212121;
+}
+
+/* Section 2 - Home
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.title-container{
+    padding-left: 72px;
+    max-width: 1216px;	
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+}
+
 .hub .-guidelines {
     background: #ffffff;
 }
@@ -166,6 +274,9 @@
 	margin:0px;
 }
 
+/* Section 3 - Home
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
 .hub .-tools {
     background: #eee;
     color: #212121;
@@ -194,4 +305,5 @@
 .header-tools h2{
 	margin:0px;
 }
+
 
