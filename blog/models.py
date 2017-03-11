@@ -1,10 +1,17 @@
 from django.db import models
 from django.utils import timezone
 
+class Category(models.Model):
+    title = models.CharField(max_length=200)
+    
+    def __str__(self):
+        return self.title
+
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     text = models.TextField()
+    category = models.ForeignKey('Category', related_name='categor', null=True)
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -34,4 +41,5 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text
+    
     

@@ -35,6 +35,7 @@
 	<div class="blocks-container">
 		{% for post in posts %}
 	    	<p>Author : {{ post.author }}</p>
+	    	<p>Category : {{ post.category }}</p>
 	        <p>published: {{ post.published_date }}</p>
 	        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
 	        <p>{{ post.text|linebreaksbr }}</p>
