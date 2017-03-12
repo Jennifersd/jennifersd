@@ -6,12 +6,12 @@ class Category(models.Model):
     
     def __str__(self):
         return self.title
-
+    
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     text = models.TextField()
-    category = models.ForeignKey('Category', related_name='categor', null=True)
+    category = models.ForeignKey('Category', related_name='category', null=True)
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(

@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import Post, Comment
+from .models import Post, Comment, Category
 from .forms import PostForm, CommentForm
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
@@ -12,6 +12,27 @@ def post_list(request):
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
+
+#def category(request):
+#    category_list = Category.objects.all()
+#    return render(request, 'blog/category.html', {'category_list' : category_list})
+
+#def category_detail(request, pk):
+#    category = get_object_or_404(Category, pk=pk)
+#    return render(request, 'blog/category_detail.html', {'category' : category})
+
+
+def category(request):
+    category_list = Category.objects.all()
+    context = {'posts': category_list}
+    return render(request, 'blog/category.html', context)
+
+def category_detail(request, pk):
+    #category = get_object_or_404(Category, pk=pk)
+    category = Category.objects.get(id=pk)
+    context = {'object': category}
+    return render(request, 'blog/category_detail.html', context)
+
 
 @login_required    
 def post_new(request):
