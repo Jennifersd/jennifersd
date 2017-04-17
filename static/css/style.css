@@ -2,6 +2,12 @@
 * General CSS
 */
 
+/*
+* Backend CSS
+*/
+
+
+
 
 /* Base
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -63,6 +69,15 @@
     background-size: 218px 56.15px;
     margin:0px;
     width:300px;
+    font-weight: 400;
+    font-size: 20px;
+    /*
+    left: 32px;
+    padding: 14px 20px;
+    */
+    margin-left: -20px;
+    position: absolute;
+    top: 0;
 }
 
 .header-container h1:hover{
@@ -84,11 +99,53 @@
     opacity:0;
 }
 
-.header-container .login-content{
-	float:right;
-	width:auto;
+.header-container .site-nav{
+    font-weight: 400;
+    display: inline-block;
+    letter-spacing: .25px;
+    position: absolute;
+    top: 0;
+    right: 32px;
 }
 
+.site-nav ._nav-items {
+    list-style: none;
+    margin: 0px;
+    padding: 0;
+    white-space: nowrap;
+    display: inline-block;
+    font-size: 0;
+}
+
+.site-nav ._nav-item {
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.site-header.-light ._nav-item a {
+    border-bottom: 2px solid rgba(255,255,255,0);
+}
+
+.site-nav ._nav-item a {
+    display: inline-block;
+    padding: 20px 12px 21px;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 700;
+    transition: border-bottom-color .1s ease-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    color:#fff;
+}
+
+.site-header.-light a {
+    color: #fff;
+}
 
 
 /* Home
@@ -309,5 +366,6 @@
 .header-tools h2{
 	margin:0px;
 }
+
 
 

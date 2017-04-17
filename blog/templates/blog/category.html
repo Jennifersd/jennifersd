@@ -1,3 +1,31 @@
+{% extends 'blog/base.html' %}
 
+{% block title %}{{ category.name }}{% endblock %}
+{% block description %}{{ category.name }}{% endblock %}
 
-{{ category_list }}
+{% block content %}
+<div class="row">
+	<div class="col-md-8">
+		<div class="page-header">
+			<h1>Our latest post in {{ category.name }}</h1>
+		</div>
+		{% for post in posts %}
+			<div class="content">
+				<h2><a href="{{posts.get_absoulte_url}}">{{ post.title }}</a></h2>
+				{% if post.image  %}
+				<img src="{{ post.image.url }}">
+				{% endif %}
+				<small>Written by {{ post.author }} on {{ post.published }} in 
+				<a href="{{posts.category.get_absoulte_url}}">{{ post.category }}</a></small>
+				{{ post.content|truncatewords:40|linebreaks }}
+			</div>
+		{% endfor %}
+		{% include 'blog/paginator.html' with page=posts %}
+	</div>
+	<div class="col-md-4">
+		<div class="page-header">
+			<h1>Sidebar</h1>
+		</div>
+	</div>
+</div>
+{% endblock %}

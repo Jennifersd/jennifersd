@@ -1,113 +1,163 @@
-from django.shortcuts import render, get_object_or_404
+#from urllib import quote_plus
+from urllib.parse import quote 
+
+from django.db.models import Q
+
+from django.shortcuts import render, get_object_or_404, redirect
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.utils import timezone
-from .models import Post, Comment, Category
-from .forms import PostForm, CommentForm
-from django.shortcuts import redirect
+from .models import Post, Category, Comment
+from django.http import Http404
+from django.contrib import messages
+from .forms import CommentForm, PostForm
+
 from django.contrib.auth.decorators import login_required
 
-def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'blog/post_list.html', {'posts': posts})
+#def post_list(request):
+#    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+#    return render(request, 'blog/post_list.html', {'posts': posts})
 
-def post_detail(request, pk):
-    post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/post_detail.html', {'post': post})
+#def post_detail(request, pk):
+#    post = get_object_or_404(Post, pk=pk)
+#    return render(request, 'blog/post_detail.html', {'post': post})
 
-#def category(request):
-#    category_list = Category.objects.all()
-#    return render(request, 'blog/category.html', {'category_list' : category_list})
+def list_of_post_by_category(request, category_slug):
+    categories = Category.objects.all()
+    post = Post.objects.filter(status='published')
+    if category_slug:
+        category = get_object_or_404(Category, slug=category_slug)
+        post = post.filter(category=category)
+    query = request.GET.get("q")
+    if query:
+        post = post.filter(
+            Q(title__icontains=query) |
+            Q(content__icontains=query) |
+            Q(author__first_name__icontains=query) |
+            Q(author__last_name__icontains=query)
+            ).distinct()    
+    paginator = Paginator(post, 3)
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+        
+    template = 'blog/category.html'
+    context = {'categories': categories, 'posts': posts, 'page': page, 'category': category}
+    return render(request, template, context)
 
-#def category_detail(request, pk):
-#    category = get_object_or_404(Category, pk=pk)
-#    return render(request, 'blog/category_detail.html', {'category' : category})
 
+def list_of_post(request):
+    post = Post.objects.filter(status='published')
+    query = request.GET.get("q")
+    if query:
+        post = post.filter(
+            Q(title__icontains=query) |
+            Q(content__icontains=query) |
+            Q(author__first_name__icontains=query) |
+            Q(author__last_name__icontains=query)
+            ).distinct()
+    paginator = Paginator(post, 3) #cantidad de post
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+    
+    template = 'blog/post_list.html'
+    context = {'posts': posts, 'page': page}
+    return render(request, template, context)
 
-def category(request):
-    category_list = Category.objects.all()
-    context = {'posts': category_list}
-    return render(request, 'blog/category.html', context)
-
-def category_detail(request, pk):
-    #category = get_object_or_404(Category, pk=pk)
-    category = Category.objects.get(id=pk)
-    context = {'object': category}
-    return render(request, 'blog/category_detail.html', context)
-
-
-@login_required    
-def post_new(request):
-    if request.method == "POST":
-        form = PostForm(request.POST)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            # post.published_date = timezone.now()
-            post.save()
-            return redirect('post_detail', pk=post.pk)
+def post_detail(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    share_string = quote(post.content)
+    context = {'post': post, 'share_string' : share_string}
+    if post.status == 'published':        
+        template = 'blog/post_detail.html'   
+        return render(request, template, context)
     else:
-        form = PostForm()
-    return render(request, 'blog/post_edit.html', {'form': form})
+        template = 'blog/post_preview.html'
+        return render(request, template, context)
 
-@login_required
-def post_edit(request, pk):
-    post = get_object_or_404(Post, pk=pk)
-    if request.method == "POST":
-        form = PostForm(request.POST, instance=post)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.save()
-            return redirect('post_detail', pk=post.pk)
-    else:
-        form = PostForm(instance=post)
-    return render(request, 'blog/post_edit.html', {'form': form})
-
-@login_required
-def post_draft_list(request):
-    posts = Post.objects.filter(published_date__isnull=True).order_by('created_date')
-    return render(request, 'blog/post_draft_list.html', {'posts': posts})
-
-@login_required
-def post_publish(request, pk):
-    post = get_object_or_404(Post, pk=pk)
-    post.publish()
-    return redirect('post_detail', pk=pk)
-
-@login_required
-def publish(self):
-    self.published_date = timezone.now()
-    self.save()
-
-@login_required    
-def post_remove(request, pk):
-    post = get_object_or_404(Post, pk=pk)
-    post.delete()
-    return redirect('post_list')
-
-def add_comment_to_post(request, pk):
-    post = get_object_or_404(Post, pk=pk)
-    if request.method == "POST":
+def add_comment(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    if request.method == 'POST':
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
             comment.post = post
             comment.save()
-            return redirect('post_detail', pk=post.pk)
+            return redirect('blog:post_detail', slug=post.slug)
     else:
         form = CommentForm()
-    return render(request, 'blog/add_comment_to_post.html', {'form': form})
+    template = 'blog/add_comment_to_post.html'
+    context = {'form': form}
+    return render(request, template, context)
+
+
+#----------------------------------------------------------------
+# ---------------------- Backend --------------------------------
+#----------------------------------------------------------------
+
 
 @login_required
-def comment_approve(request, pk):
-    comment = get_object_or_404(Comment, pk=pk)
-    comment.approve()
-    return redirect('post_detail', pk=comment.post.pk)
+def new_post(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.save()
+            return redirect('blog:post_detail', slug=post.slug)
+    else:
+        form = PostForm()
+    template = 'blog/backend/new_post.html'
+    context = {'form': form}
+    return render(request, template, context)
 
 @login_required
-def comment_remove(request, pk):
-    comment = get_object_or_404(Comment, pk=pk)
-    post_pk = comment.post.pk
-    comment.delete()
-    return redirect('post_detail', pk=post_pk)
+def list_of_post_backend(request):
+    post = Post.objects.all()
+    paginator = Paginator(post, 10)
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+    
+    template = 'blog/backend/list_of_post_backend.html'
+    context = {'posts': posts, 'page': page}
+    return render(request, template, context)  
+  
+@login_required
+def edit_post(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    if request.method == 'POST':
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.save()
+            return redirect('blog:list_of_post_backend')
+    else:
+        form = PostForm(instance=post)
+    template = 'blog/backend/new_post.html'
+    context = {'form': form}
+    return render(request, template, context)
 
+@login_required
+def delete_post(request, slug):
+    if not request.user.is_staff or not request.user.is_superuser:
+        raise Http404
+    post = get_object_or_404(Post, slug=slug)
+    post.delete()
+    messages.success(request, "Successfully Delete")
+    return redirect('blog:list_of_post_backend')
 
+    
