@@ -1,5 +1,8 @@
 {% extends 'blog/base.html' %}
 
+{% block title %}Jennifersd | Home{% endblock %}
+{% block description %}Jennifersd {% endblock %}
+
 {% block content %}
 <section class="drawer -material">
 	<div class="blocks-container">
@@ -36,14 +39,17 @@
 <section class="drawer -blog">
 	<div class="blocks-container">
 		{% for post in posts %}
-	    	<p>Author : {{ post.author }}</p>
-	    	<p>Category : {{ post.category }}</p>
-	        <p>published: {{ post.published_date }}</p>
-	        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-	        <p>{{ post.text|linebreaksbr }}</p>
-	        <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
-	        
-        {% endfor %}
+			<div class="content">
+				<h2><a href="{{post.get_absoulte_url}}">{{ post.title }}</a></h2>
+				{% if post.image  %}
+				<img src="{{ post.image.url }}">
+				{% endif %}
+				<small>Written by {{ post.author.get_full_name }} on {{ post.published }} in 
+				<a href="{{post.category.get_absoulte_url}}">{{ post.category }}</a></small>
+				{{ post.content|truncatewords:40|linebreaks }}
+			</div>
+		{% endfor %}
+		{% include 'blog/paginator.html' with page=posts %}
    	</div>
 </section>
  	

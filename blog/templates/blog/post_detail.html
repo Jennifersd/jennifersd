@@ -1,44 +1,66 @@
 {% extends 'blog/base.html' %}
 
+{% block title %}{{ post.seo_title }} {% endblock %}
+{% block description %} {{ posts.seo_description }} {% endblock %}
+
 {% block content %}
 	<section class="drawer -blog">
 		<div class="blocks-container">
 		    <div class="post">
-		        {% if post.published_date %}
-				    <div class="date">
-				        {{ post.published_date }}
-				    </div>
-				{% else %}
-					{% if user.is_authenticated %}
-					    <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
-					    <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}">Delete</a>
-				    {% endif %}	
-				{% endif %}
-		        {% if user.is_authenticated %}<a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">Editar post</a>{% endif %}	
-		        <h1>{{ post.title }}</h1>
-		        <p>{{ post.text|linebreaksbr }}</p>
+		       	<div class="content">
+					<h2>{{ post.title }}</h2>
+					{% if post.image  %}
+						<img src="{{ post.image.url }}">
+					{% endif %}
+										
+					<div class="social-link">
+					
+						<ul>
+							<li>
+								<a href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_uri}}">Facebook</a>
+							</li>
+							<li>
+								<a href="https://twitter.com/home?status={{share_string|truncatewords:5}}%20{{request.build_absolute_uri}}">Twitter</a>
+							</li>
+							<li>
+								<a href='https://plus.google.com/share?url={{request.build_absolute_uri}}'>Google</a>
+								
+							</li>
+							<li>
+								<a href="https://www.linkedin.com/shareArticle?mini=true&url={{request.build_absolute_uri}}&title={{post.title}}&summary={{share_string}}&source={{request.build_absolute_uri}}">Linkedin</a>
+							</li>
+							
+						</ul>
+					</div>
+					<small>Written by {{ post.author.get_full_name }} on {{ post.published }} in <a href="{{post.category.get_absoulte_url}}">{{ post.category }}</a></small>
+					{{ post.content|linebreaks }}
+					
+					<hr>
+					{{ post.richtextuploads|safe }}
+					{{ post.richtext|safe }}
+					<hr>
+					<div class="page-header">
+						<h1>Comments<small> Total number of comments: {{ post.comments.count }}</small></h1>
+					</div>
+					
+					<p class="text-center">
+						<a href="{% url 'blog:add_comment' slug=post.slug %}">
+							<button class="btn btn-default" type="button">Leave a Comment</button>
+						</a>
+					</p>
+		
+					<hr>
+					{% for comment in post.comments.all %}
+						<div class="panel panel-default">
+							<div class="panel-heading">{{ comment.user }} commented on {{ comment.created }}</div>
+							<div class="panel-body">{{ comment.body }}</div>
+						</div>
+					{% empty %}
+						<p>There is not comments</p>
+					{% endfor %}
+				</div>
 		    </div>
-		    <div class="comments">
-
-				<a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
-				{% for comment in post.comments.all %}
-				    {% if user.is_authenticated or comment.approved_comment %}
-				    <div class="comment">
-				        <div class="date">
-				            {{ comment.created_date }}
-				            {% if not comment.approved_comment %}
-				                <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}">Borrar></a>
-				                <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}">Aprobar</a>
-				            {% endif %}
-				        </div>
-				        <strong>{{ comment.author }}</strong>
-				        <p>{{ comment.text|linebreaks }}</p>
-				    </div>
-				    {% endif %}
-				{% empty %}
-				    <p>No comments here yet :(</p>
-				{% endfor %}
-		    </div>
+		   
 		</div>
 	</section>
 {% endblock %}
