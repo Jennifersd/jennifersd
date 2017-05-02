@@ -1,0 +1,179 @@
+
+/*
+__________________________________________________________
+__________________________________________________________
+______________________ Mobile CSS ________________________
+__________________________________________________________
+*/
+
+@media (max-width: 767px){
+
+	/* General
+	–––––––––––––––––––––––––––––––––––––––––––––––––– */
+	
+	.blocks-container {
+	    max-width: 768px !important;
+	    padding: 0 15px !important;
+	}
+	
+	/* Header
+	–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+	.header-container .site-nav{
+		display:none !important;
+	}
+		
+	.hub .header-wrap {
+    	padding: 10px !important;
+	}
+	
+	._nav-items-footer li{
+		display:none !important;
+	}
+	
+	._nav-items-footer li:last-child{
+		display:block !important;
+	}
+	
+	footer{
+		padding: 10px !important;
+	}
+
+	/* Section 1 - Home
+	–––––––––––––––––––––––––––––––––––––––––––––––––– */	
+	
+	.hub .-material {
+	    background-position: center 0px, 0 0 !important;
+	}
+	
+	.wrapper {
+	    padding-left: 0px !important;
+	    position:relative !important;
+	    top: 0 !important;
+    	transform: inherit !important;
+	}
+	
+	.-material-block-text {
+	    height: auto !important;
+	    display: inline-block;
+	    padding: 59px 0px 0px 0px !important; 
+	}
+	
+	.-material-block-text h1 {
+	    font-size: 28px !important; 
+	    line-height: 33px !important; 
+	}
+	
+	.-material-block-text h2 {
+	    font-size: 18px !important;
+	    line-height: 22px !important;
+	    width: 100% !important;
+	    margin: 20px 0px !important;
+	}
+	
+	.list-button-header {
+	    width: 80% !important;
+	    float:none !important;
+	    margin:0 auto;
+	}
+	
+	#button-header-blog{
+		width: 100% !important;
+		padding: 14px 0px !important;
+		font-size:16px !important;
+		margin-bottom:15px;
+	}
+	
+	#button-header-recursos{
+		width: 100% !important;
+		padding: 14px 0px !important;
+		font-size:16px !important;
+	}
+
+	/* Section 2 - Blog
+	–––––––––––––––––––––––––––––––––––––––––––––––––– */	
+	
+	.-blog h3 {
+	    font-size: 28px !important; 
+	    line-height: 33px !important; 
+	}
+	
+	.-blog .text-blog-home {
+	    font-size: 18px !important;
+	    width: 100% !important;
+	}
+	
+	.list-blog-home{
+		padding:0 10px !important;
+	}
+	
+	.list-blog-home li{
+		-webkit-flex-basis:100% !important;
+	    flex-basis: 100% !important;
+	    margin: 0px 0px 20px 0px !important;
+		-webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.3) !important;
+		-moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.3) !important;
+		box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.3) !important;
+		padding:15px !important;
+	}
+	
+	/* Section 3 - Resources
+	–––––––––––––––––––––––––––––––––––––––––––––––––– */	
+	
+	.-resources h3 {
+	    font-size: 28px !important; 
+	    line-height: 33px !important; 
+	}
+	
+	.-resources .text-resources-home {
+	    font-size: 18px !important;
+	    width: 100% !important;
+	}
+	
+	.center-content-resources {
+	    width: 100% !important;
+	}
+	
+	.center-content-resources img {
+	    margin-bottom: -80px !important;
+	}
+	
+	/* Section 4 - Web
+	–––––––––––––––––––––––––––––––––––––––––––––––––– */	
+	
+	.content-web{
+		margin-top: 20px !important;
+		display:inline-block !important;
+	}	
+	
+	.left-content-web, .right-content-web{
+		width:100% !important;
+	}
+	
+	.left-content-web h3{
+		font-size: 28px !important;
+    	line-height: 33px !important;
+	}
+	
+	.left-content-web p {
+		margin:10px 0px 20px 0px !important;
+	    font-size: 18px !important;
+	    width: 100% !important;
+	}
+	
+	.left-content-web a {
+	    float:none !important;
+	    width: 89% !important;
+	  	padding: 14px 0px !important;
+    	font-size: 16px !important;
+	    margin: 0px auto !important;
+	    display: block !important;
+	    position: relative !important;
+	    text-align: center;
+	}
+}
+
+
+
+
+

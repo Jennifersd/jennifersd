@@ -1,79 +1,84 @@
 {% extends 'blog/base.html' %}
 
-{% block title %}Jennifersd | Home{% endblock %}
-{% block description %}Jennifersd {% endblock %}
+{% block title %} Jennifersd | Home {% endblock %}
+{% block description %} Jennifersd {% endblock %}
+{% block id %} home {% endblock %}
 
 {% block content %}
 <section class="drawer -material">
 	<div class="blocks-container">
 		<div class="-material-block-text">
 			<div class="wrapper">
-			   
-			
-				<h2>Collaboratively brand standardized vortals through real-time e-commerce. Continually restore intuitive networks without market-driven testing procedures. </h2>
-				<a class="-material-link">Saber más</a>
+				<h1>Conveniently build mission-critical models</h1>
+				<h2>Efficiently matrix stand-alone mindshare via quality markets. Dramatically promote e-business internal or "organic" sources without alternative testing procedures.
+Efficiently matrix stand-alone mindshare.</h2>
+				<div class="list-button-header">
+					<a id="button-header-blog" href="">Descubre más en <strong>blog</strong></a>
+					<a id="button-header-recursos" href="">Quieres aprender, visita <strong>recursos</strong></a>
+				</div>
 			</div>
-		</div>
-		<div class="-material-block-grid">
-			<ul class="grid">
-				<li class="block-wrap -poster-wrap -tablet-poster">
-					<a href="" class="block -poster -hero-card -bg-hero">
-						1
-					</a>
-				</li>
-				<li class="block-wrap -poster-wrap -tablet-poster -last">
-					<a href="" class="block -poster -stage -bg-stage">
-						2
-					</a>
-				</li>
-				<li class="block-wrap -poster-wrap -tablet-card -last">
-					<a href="" class="block -poster -gallery -bg-spec">
-						3
-					</a>
-				</li>
-			</ul>
 		</div>
 	</div>
 </section>
 	
 <section class="drawer -blog">
 	<div class="blocks-container">
-		{% for post in posts %}
-			<div class="content">
-				<h2><a href="{{post.get_absoulte_url}}">{{ post.title }}</a></h2>
-				{% if post.image  %}
-				<img src="{{ post.image.url }}">
-				{% endif %}
-				<small>Written by {{ post.author.get_full_name }} on {{ post.published }} in 
-				<a href="{{post.category.get_absoulte_url}}">{{ post.category }}</a></small>
-				{{ post.content|truncatewords:40|linebreaks }}
-			</div>
-		{% endfor %}
-		{% include 'blog/paginator.html' with page=posts %}
+		<h3>Últimas entradas, no te lo pierdas</h3>
+		<p class="text-blog-home">Efficiently matrix stand-alone mindshare via quality markets. Dramatically promote e-business internal or "organic" sources without alternative,</p>
+		<div class="content-list-blog-home">
+			<ul class="list-blog-home">
+				{% for post in posts %}
+					<li>		
+						<h2><a href="{{post.get_absoulte_url}}">{{ post.title }}</a></h2>
+						<p>{{ post.content|truncatewords:15 }}</p>
+						<small>{{ post.author.get_full_name }}</small>
+						{% if post.image  %}
+							<div class="img-list-blog-home">
+								<a href="{{post.category.get_absoulte_url}}">
+									<img src="{{ post.image.url }}">
+								</a>
+							</div>
+						{% endif %}
+						<div class="bottom-list-blog-home">
+							<div class="categories-list-blog-home">
+								<a href="{{post.category.get_absoulte_url}}">{{ post.category }}</a>
+							</div>
+							<div class="date-list-blog-home"> {{ post.published }}</div>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
    	</div>
 </section>
- 	
-<section class="drawer -guidelines">
-	<div class="header-guidelines -locked-bottom">
-		<div class="title-container">
- 			<h2>
- 				Guidelines
- 			</h2>
- 		</div>
-	</div>
+
+<section class="drawer -resources">
 	<div class="blocks-container">
-	</div>
+		<h3>Una pequeña colección de recursos</h3>
+		<p class="text-resources-home">Efficiently matrix stand-alone mindshare via quality markets. Dramatically promote e-business internal or "organic" sources without alternative,</p>
+		<div class="content-resources">
+			<div class="center-content-resources">
+				<img src="/static/img/bg-recursos.png"/>
+			</div>	
+		</div>
+   	</div>
 </section>
 
-<section class="drawer -tools">
-	<div class="header-tools -locked-bottom">
-		<div class="title-container">
-  			<h2>
-  				Tools
-  			</h2>
-  		</div>
- 		</div>
+<section class="drawer -web">
 	<div class="blocks-container">
-	</div>		
-</section>
+		<div class="content-web flex">
+			<div class="left-content-web">
+				<h3>Conveniently build mission-critical</h3>
+				<p>Efficiently matrix stand-alone mindshare via quality markets. Dramatically promote e-business internal or "organic" sources without alternative testing procedures.
+Efficiently matrix stand-alone mindshare</p>
+				<a>Descubre cuanto vale la web que <strong>deseas</strong></a>
+			</div>
+			<div class="right-content-web">
+				<div>
+					<img src="/static/img/img-web.png"/>
+				</div>
+			</div>
+		</div>
+	</div>
+</section> 
 {% endblock content %}
