@@ -36,6 +36,14 @@ a{
 	text-decoration:none;
 }
 
+.flex{
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex; 	
+}
+
 /* Header
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -146,6 +154,109 @@ a{
 }
 
 
+/* Footer
+__________________________________________________ */
+
+footer{
+	position:relative;
+	width:100%;
+    padding: 5px 24px;
+    background-color: transparent;
+    z-index: 2;
+    cursor: default;
+    width: 100%;
+    top: 0;
+    bottom: auto;
+    left: 0;
+    box-shadow: 0;
+    box-sizing: border-box;
+    z-index: 4;
+}
+
+.footer-container{
+	position: relative;
+    /*background: transparent url(images/hub/logo.svg) no-repeat left center;
+    background-size: 48px 48px;
+    padding-left: 89px;*/
+    max-width: 1280px;
+    height: 56.15px;
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.footer-container h1{
+    background: transparent url(/static/img/logo-jennifersd-copy.svg) no-repeat left center;
+    background-size: 157px 41.15px;
+    margin: 0px;
+    width: 183px;
+    font-weight: 400;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+}
+
+.footer-container h1:hover{
+    opacity:.8;
+    -moz-transition:all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -o-transition:all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -webkit-transition:all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+}
+
+.footer-container h1 a{
+    display: block;
+    margin: 0;
+    text-indent: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 56.15px;
+    opacity:0;
+}
+
+.footer-container .site-nav-footer{
+    font-weight: 400;
+    display: inline-block;
+    letter-spacing: .25px;
+    position: absolute;
+    top: 0;
+    right: 32px;
+}
+
+.site-nav-footer ._nav-items-footer {
+    list-style: none;
+    margin: 0px;
+    padding: 0;
+    white-space: nowrap;
+    display: inline-block;
+    font-size: 0;
+}
+
+.site-nav-footer ._nav-item-footer {
+    display: inline-block;
+}
+
+.site-nav-footer ._nav-item-footer a {
+    display: inline-block;
+    padding: 20px 12px 21px;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 400;
+    transition: border-bottom-color .1s ease-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    color: #32325d;
+}
+
+
 /* Home
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -224,7 +335,7 @@ a{
 	transition: background-color 0.5s ease;
 }
 
-#button-header-recursos:hover{
+#button-header-blog:hover{
 	background-color:#ea2155;
 }
 
@@ -285,12 +396,13 @@ a{
 }
 
 .list-blog-home li{
+	-webkit-flex-basis:0;
     flex-basis: 0;
     flex-grow: 6;
     width: 100%;
     position: relative;
     list-style-type:none;
-    margin: 0 70px 0 0;
+    margin: 0 80px 0 0;
 	-webkit-box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.3);
 	-moz-box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.3);
 	box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.3);
@@ -305,8 +417,9 @@ a{
 	margin:0px;
 	text-align: justify;
     font-size: 18px;
-    line-height: 18px;
+    line-height: 20px;
     font-weight: 400;
+    margin-top:5px;
 }
 
 .list-blog-home h2 a{
@@ -315,10 +428,10 @@ a{
 
 .list-blog-home p{
 	color:#6b7c93;
-	margin-top:10px;
+	margin:15px 0px 20px 0px;
 	text-align: left;
     font-size: 15px;
-    line-height: 16px;
+    line-height: 19px;
     font-weight: 400;	
 }
 
@@ -333,11 +446,14 @@ a{
 
 .img-list-blog-home img{
 	width: 100%;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 .bottom-list-blog-home{
 	width:100%;
-	margin-top:10px;
+	margin-top:20px;
 }
 
 .categories-list-blog-home{
@@ -367,3 +483,133 @@ a{
 	font-size: 13px;
 	text-align: right;	
 }
+
+
+/* Section 3 - Resources
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.-resources{
+	background:#f2f3f6;
+	padding-bottom:0px !important;
+}
+
+.-resources h3 {
+	text-align:center;
+	color:#32325d;
+    font-size: 36px;
+    line-height: 32px;
+    font-weight: 400;
+    margin:20px 0px;
+}
+
+.-resources .text-resources-home{
+    color: #6b7c93;
+    text-align: center;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    width: 700px;
+    margin: 0px auto;
+    letter-spacing: 1px;
+}
+
+.content-list-blog-home{
+	width:100%;
+	margin:40px 0px 20px 0px;
+}
+
+.content-resources{
+	width:100%;
+}
+
+.center-content-resources{
+	margin:0px auto;
+	width:80%;
+}
+
+.center-content-resources img{
+	width: 100%;
+	margin-bottom: -145px;
+	z-index: 9;
+	position: relative;
+}
+
+/* Section 4 - Web
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.-web{
+	background-color: #47346b;
+    color: #fff;
+    padding-top: 0;
+	background-image: url(/static/img/bg-header.png);
+    background-position: center -75px, 0 0;
+    background-size: 100% auto;
+}
+
+.content-web{
+	margin-top: 100px;
+}
+
+.left-content-web{
+	width:55%;
+}
+
+.left-content-web h3{
+    font-size: 36px;
+    line-height: 32px;
+    font-weight: 400;
+}
+
+.left-content-web p{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    width: 85%;
+    margin: 30px 0px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.left-content-web a{
+    float: left;
+    width: auto;
+    color: #fff;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    background: #ff3569;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 15px;
+    transition: background-color 0.5s ease;
+    cursor:pointer;
+}
+
+.left-content-web a:hover{
+	background-color:#ea2155;
+}
+
+.right-content-web{
+	width:45%;
+}
+
+.right-content-web div{
+	width: 100%;
+}
+
+.right-content-web img{
+	width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

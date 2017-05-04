@@ -153,6 +153,13 @@ a{
     color: #fff;
 }
 
+.burger-container{
+	display:none;
+}
+
+@media (max-width: 767px){
+
+}
 
 /* Footer
 __________________________________________________ */
