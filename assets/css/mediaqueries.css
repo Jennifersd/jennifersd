@@ -27,9 +27,9 @@ __________________________________________________________
 		display: block;
 	    top: 0;
 	    left: 0;
-	    height: 50px;
+	    height: 100% !important;
 	    width: 100%;
-	    background: rgba(74, 49, 109, 0.8);
+	    background: rgba(74, 49, 109, 0.0);
 	    overflow: hidden;
 	    -webkit-transition: all 0.5s ease-out, background 1s ease-out;
 	    transition: all 0.5s ease-out, background 1s ease-out;
@@ -175,6 +175,7 @@ __________________________________________________________
 	.header-container.menu-opened {
 	  height: 100%;
 	  background-color: #4a316d;
+	  background: rgba(74, 49, 109, 0.8) !important;
 	  -webkit-transition: all 0.3s ease-in, background 0.5s ease-in;
 	  transition: all 0.3s ease-in, background 0.5s ease-in;
 	  -webkit-transition-delay: 0.25s;

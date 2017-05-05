@@ -21,6 +21,29 @@ from django.contrib.auth.decorators import login_required
 #    post = get_object_or_404(Post, pk=pk)
 #    return render(request, 'blog/post_detail.html', {'post': post})
 
+def blog_list(request):
+    post = Post.objects.filter(status='published')
+    query = request.GET.get("q")
+    if query:
+        post = post.filter(
+            Q(title__icontains=query) |
+            Q(content__icontains=query) |
+            Q(author__first_name__icontains=query) |
+            Q(author__last_name__icontains=query)
+            ).distinct()
+    paginator = Paginator(post, 3) #cantidad de post
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+    
+    template = 'blog/blog_list.html'
+    context = {'posts': posts, 'page': page}
+    return render(request, template, context)
+
 def list_of_post_by_category(request, category_slug):
     categories = Category.objects.all()
     post = Post.objects.filter(status='published')

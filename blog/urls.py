@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.list_of_post, name="post_list"),
+    url(r'^blog$', views.blog_list, name="blog_list"),
     url(r'^(?P<slug>[-\w]+)/$', views.post_detail, name='post_detail'),
     url(r'^(?P<slug>[-\w]+)/$', views.post_detail, name='post_detail'),
     url(r'^category/(?P<category_slug>[-\w]+)/$', views.list_of_post_by_category , name='list_of_post_by_category'),
