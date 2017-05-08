@@ -22,7 +22,9 @@ from django.contrib.auth.decorators import login_required
 #    return render(request, 'blog/post_detail.html', {'post': post})
 
 def blog_list(request):
-    post = Post.objects.filter(status='published')
+    #post = Post.objects.filter(updated__lte=timezone.now()).order_by('published')
+
+    post = Post.objects.order_by('-published')
     query = request.GET.get("q")
     if query:
         post = post.filter(
@@ -58,7 +60,7 @@ def list_of_post_by_category(request, category_slug):
             Q(author__first_name__icontains=query) |
             Q(author__last_name__icontains=query)
             ).distinct()    
-    paginator = Paginator(post, 3)
+    paginator = Paginator(post, 2)
     page = request.GET.get('page')
     try:
         posts = paginator.page(page)

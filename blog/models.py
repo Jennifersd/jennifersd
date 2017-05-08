@@ -49,6 +49,9 @@ class Post(models.Model):
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=9, choices=STATUS_CHOICES, default='draft')
   
+    class Meta:
+        ordering = ['-published',]
+  
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)

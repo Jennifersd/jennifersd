@@ -2,37 +2,53 @@
 
 {% block title %} Jennifersd | Home {% endblock %}
 {% block description %} Jennifersd {% endblock %}
-{% block id %} home {% endblock %}
+{% block id %} blog {% endblock %}
 
 {% block content %}
-
-	
-<section class="drawer -blog">
+{% for  post in posts|slice:":1" %}
+<section class="drawer -post" style="background-image:url({{ post.image.url }})">
 	<div class="blocks-container">
-		<p class="text-blog-home">Efficiently matrix stand-alone mindshare via quality markets. Dramatically promote e-business internal or "organic" sources without alternative,</p>
-		<div class="content-list-blog-home">
-			<ul class="list-blog-home">
+		<div class="-post-block-text">
+			<div class="wrapper">
+				<h1>{{ post.title }}</h1>
+				<h2>{{ post.content|truncatewords:25 }}</h2>
+				<div class="list-button-post">
+					<a id="button-header-post" href="{{post.category.get_absoulte_url}}">Descubre más en <strong>blog</strong></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endfor %}
+
+<section class="drawer -post-list">
+	<div class="blocks-container">
+		<h3>Últimas entradas, no te lo pierdas</h3>
+		<p class="text-blog-list">Efficiently matrix stand-alone mindshare via quality markets. Dramatically promote e-business internal or "organic" sources without alternative,</p>
+		<div class="content-list-blog">
+			<ul class="list-blog">
 				{% for post in posts %}
 					<li>		
 						<h2><a href="{{post.get_absoulte_url}}">{{ post.title }}</a></h2>
 						<p>{{ post.content|truncatewords:15 }}</p>
 						<small>{{ post.author.get_full_name }}</small>
 						{% if post.image  %}
-							<div class="img-list-blog-home">
+							<div class="img-list-blog">
 								<a href="{{post.category.get_absoulte_url}}">
 									<img src="{{ post.image.url }}">
 								</a>
 							</div>
 						{% endif %}
-						<div class="bottom-list-blog-home">
-							<div class="categories-list-blog-home">
+						<div class="bottom-list-blog">
+							<div class="categories-list-blog">
 								<a href="{{post.category.get_absoulte_url}}">{{ post.category }}</a>
 							</div>
-							<div class="date-list-blog-home"> {{ post.published }}</div>
+							<div class="date-list-blog"> {{ post.published }}</div>
 						</div>
 					</li>
 				{% endfor %}
 			</ul>
+			{% include 'blog/paginator.html' with page=posts %}
 		</div>
    	</div>
 </section>
