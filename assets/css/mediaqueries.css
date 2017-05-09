@@ -41,6 +41,8 @@ __________________________________________________________
 	
 	.header-container h1 {
 		background-size: 144px 67.15px !important;
+		-webkit-background-size: 144px 67.15px !important;
+		-moz-background-size: 144px 67.15px !important;
 	    top: 10px !important;
 	    left: 10px !important;
 	}
@@ -330,17 +332,19 @@ __________________________________________________________
 	}
 	
 	.list-blog-home{
-		padding:0 10px !important;
+		padding:0px !important;
 	}
 	
 	.list-blog-home li{
 		-webkit-flex-basis:100% !important;
 	    flex-basis: 100% !important;
 	    margin: 0px 0px 20px 0px !important;
-		-webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.3) !important;
-		-moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.3) !important;
-		box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.3) !important;
+	    box-shadow: none !important;
+		-webkit-box-shadow: none !important;
+		-moz-box-shadow: none !important;
+		border-top: 1px solid #d8d6d6;
 		padding:15px !important;
+		max-width: 100% !important;
 	}
 	
 	/* Section 3 - Resources
@@ -396,6 +400,86 @@ __________________________________________________________
 	    display: block !important;
 	    position: relative !important;
 	    text-align: center;
+	}
+	
+	/* Blog
+	–––––––––––––––––––––––––––––––––––––––––––––––––– */
+	
+	/* Section 1 - Blog
+	–––––––––––––––––––––––––––––––––––––––––––––––––– */	
+	
+	.hub .-post {
+	    background-position: center 0px, 0 0 !important;
+	    background-size: cover !important;
+	    -webkit-background-size: cover !important;
+    	-moz-background-size: cover !important;
+	}
+	
+	.-post-block-text {
+	    height: auto !important;
+	    display: inline-block;
+	    padding: 59px 0px 0px 0px !important; 
+	}
+	
+	.-post-block-text h1 {
+	    font-size: 28px !important; 
+	    line-height: 33px !important; 
+	}
+	
+	.-post-block-text h2 {
+	    font-size: 18px !important;
+	    line-height: 22px !important;
+	    width: 100% !important;
+	    margin: 20px 0px !important;
+	}
+	
+	.list-button-post {
+	    width: 80% !important;
+	    float:none !important;
+	    margin:0 auto;
+	}
+	
+	#button-header-post{
+		width: 100% !important;
+		padding: 14px 0px !important;
+		font-size:16px !important;
+		margin-bottom:15px;
+	}
+	
+	#button-header-blog {
+    width: 100% !important;
+    padding: 14px 0px !important;
+    font-size: 16px !important;
+    margin-bottom: 15px;
+}
+	
+	/* Section 2 - Blog post
+	–––––––––––––––––––––––––––––––––––––––––––––––––– */	
+	
+	.-post-list h3 {
+	    font-size: 28px !important; 
+	    line-height: 33px !important; 
+	}
+	
+	.-post-list .text-blog-list {
+	    font-size: 18px !important;
+	    width: 100% !important;
+	}
+	
+	.list-blog{
+		padding:0px !important;
+	}
+	
+	.list-blog li{
+		-webkit-flex-basis:100% !important;
+	    flex-basis: 100% !important;
+	    margin: 0px 0px 20px 0px !important;
+		-webkit-box-shadow: none !important;
+		-moz-box-shadow: none !important;
+		border-top: 1px solid #d8d6d6;
+		box-shadow: none !important;
+		padding:15px !important;
+		max-width: 100% !important;
 	}
 }
 

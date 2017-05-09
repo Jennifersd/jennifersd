@@ -79,6 +79,8 @@ a{
 .header-container h1{
     background: transparent url('/static/img/logo-jennifersd.svg') no-repeat left center;
     background-size: 195px 56.15px;
+    -webkit-background-size: 195px 56.15px;
+    -moz-background-size: 195px 56.15px;
     margin:0px;
     width:200px;
     font-weight: 400;
@@ -197,6 +199,8 @@ footer{
 .footer-container h1{
     background: transparent url(/static/img/logo-jennifersd-copy.svg) no-repeat left center;
     background-size: 157px 41.15px;
+    -webkit-background-size: 157px 41.15px;
+    -moz-background-size: 157px 41.15px;
     margin: 0px;
     width: 183px;
     font-weight: 400;
@@ -283,6 +287,8 @@ footer{
 	background-image: url(/static/img/bg-header.png);
     background-position: center -75px, 0 0;
     background-size: 100% auto;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
 }
 
 .blocks-container{
@@ -551,6 +557,8 @@ footer{
 	background-image: url(/static/img/bg-header.png);
     background-position: center -75px, 0 0;
     background-size: 100% auto;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
 }
 
 .content-web{
@@ -621,6 +629,8 @@ footer{
     padding-top: 0;
     background-position: center 0px, 0 0;
     background-size: 100% auto;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
     background-repeat: no-repeat;
 }
 
@@ -802,7 +812,7 @@ footer{
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .nav-pagination {
-    display: flex;
+    display: block;
     flex-wrap: wrap;
     min-height: initial;
     min-width: initial;
@@ -810,8 +820,87 @@ footer{
     padding: 0px 40px;
 }
 
+.pagination{
+    display: block;
+    list-style: none;
+    margin: 0px;
+    padding: 0;
+    white-space: nowrap;
+    display: inline-block;
+    font-size: 0;
+    float:right;
+}
 
+.pagination li{
+    float:left;
+    width:auto;	
+    padding:5px 0px;
+    margin: 0px 0px 0px 5px;
+}
 
+.pagination li a{
+    padding: 20px 12px 21px;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 400;
+    transition: border-bottom-color .1s ease-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    color: #32325d;
+}
+
+.sr-only{
+	display:none;
+}
+
+.disabled span{
+	padding: 20px 12px 21px;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 400;
+    transition: border-bottom-color .1s ease-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+	color:#ccc;
+}
+
+.active{
+    color: #fff;
+    background: #ff3569;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    width: auto;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.active span{
+	padding: 20px 12px 21px;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 400;
+    transition: border-bottom-color .1s ease-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    color: #fff;
+}
 
 
 

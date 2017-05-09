@@ -23,7 +23,7 @@ from django.contrib.auth.decorators import login_required
 
 def blog_list(request):
     #post = Post.objects.filter(updated__lte=timezone.now()).order_by('published')
-
+    categories = Category.objects.all()
     post = Post.objects.order_by('-published')
     query = request.GET.get("q")
     if query:
@@ -43,7 +43,7 @@ def blog_list(request):
         posts = paginator.page(paginator.num_pages)
     
     template = 'blog/blog_list.html'
-    context = {'posts': posts, 'page': page}
+    context = {'categories': categories, 'posts': posts, 'page': page}
     return render(request, template, context)
 
 def list_of_post_by_category(request, category_slug):

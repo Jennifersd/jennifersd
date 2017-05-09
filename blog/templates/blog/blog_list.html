@@ -18,6 +18,13 @@
 			</div>
 		</div>
 	</div>
+	<div class="block-categories-full">
+		{% for category in categories %}
+	    	<ul>
+	       		<li><a href="/blog/category/{{ category.slug }}">{{ category.name }}</a> </li>
+	     	</ul>
+	   	{% endfor %}
+	</div>
 </section>
 {% endfor %}
 
