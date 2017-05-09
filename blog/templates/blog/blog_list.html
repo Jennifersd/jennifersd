@@ -6,7 +6,7 @@
 
 {% block content %}
 {% for  post in posts|slice:":1" %}
-<section class="drawer -post" style="background-image:url({{ post.image.url }})">
+<section class="blogs -post" style="background-image:url({{ post.image.url }})">
 	<div class="blocks-container">
 		<div class="-post-block-text">
 			<div class="wrapper">
@@ -19,11 +19,14 @@
 		</div>
 	</div>
 	<div class="block-categories-full">
-		{% for category in categories %}
-	    	<ul>
-	       		<li><a href="/blog/category/{{ category.slug }}">{{ category.name }}</a> </li>
-	     	</ul>
-	   	{% endfor %}
+		<div class="blocks-container">
+			<h3>Descubrir categorías</h3>
+			<ul class="list-categories">
+			{% for category in categories %}
+		    	<li><a href="/blog/category/{{ category.slug }}">{{ category.name }}</a> </li>
+		   	{% endfor %}
+			</ul>
+		</div>
 	</div>
 </section>
 {% endfor %}

@@ -159,10 +159,6 @@ a{
 	display:none;
 }
 
-@media (max-width: 767px){
-
-}
-
 /* Footer
 __________________________________________________ */
 
@@ -623,6 +619,12 @@ footer{
 /* Section 1 - Blog
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+.hub .blogs {
+    position: relative;
+    width: 100%;
+    padding: 40px 0px 0px 0px;
+}
+
 .hub .-post {
     background-color: #47346b;
     color: #fff;
@@ -636,7 +638,7 @@ footer{
 
 .-post-block-text{
 	position: relative;
-    padding-bottom: 50%;
+    padding-bottom: 47%;
     margin-bottom: 8px;
     height: 0;
 }
@@ -678,6 +680,58 @@ footer{
 
 #button-header-post:hover{
 	background-color:#ea2155;
+}
+
+.block-categories-full{
+	display: inline-block;
+	width:100%;
+    background: rgba(138, 135, 135, 0.5);
+}
+
+.block-categories-full h3{
+	display:none;
+	font-size: 18px;
+    font-weight: 200;
+}
+
+.content-categories{
+	display: inline-block;
+}
+
+.list-categories{
+    display: inline-block;
+    padding: 0px;
+    width: 100%;	
+}
+
+.list-categories li{
+	display: block;
+    list-style-type: none;
+    width: 14.28%;
+    float: left;
+}
+
+.list-categories li a {
+	text-align: center;
+    color: #fff;
+    display: block;
+    border-right: 1px solid #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1.4px;
+    padding: 7px 0px;
+}
+
+.list-categories li:last-child a {
+    border-right: none;
+    border-bottom: none;
+}
+
+@media (max-width: 767px){
+	.list-categories{
+		display:none;
+	}
 }
 
 /* Section 2 - Blog post list
