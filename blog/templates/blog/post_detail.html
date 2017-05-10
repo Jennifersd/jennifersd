@@ -4,47 +4,78 @@
 {% block description %} {{ posts.seo_description }} {% endblock %}
 
 {% block content %}
+
+<section class="blogs -post" style="background-image:url({{ post.image.url }})">
+	<div class="blocks-container">
+		<div class="-post-block-text">
+			<div class="wrapper">
+				<h1>{{ post.title }}</h1>
+				<h2>{{ post.content|truncatewords:25 }}</h2>
+				<div class="list-button-post">
+					<a id="button-header-post" href="{{post.category.get_absoulte_url}}">Descubre más en <strong>blog</strong></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="blocks-search">
+		<div class="search-content">
+			<form method="GET" action="">
+				<input type="text" name="q" placeholder="Quieres leer algo más" value="{{ request.GET.q }}" />
+				<input type="submit" value="Search" />
+			</form>
+		</div>
+	</div>
+</section>
+
+<section class="drawer -post-content">
+	<div class="blocks-container">
+		<div class="social-link">	
+			<h3>Compartir</h3>		
+			<ul>
+				<li>
+					<a href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_uri}}">
+						<img src="/static/img/facebook.png"/>
+					</a>
+				</li>
+				<li>
+					<a href="https://twitter.com/home?status={{share_string|truncatewords:5}}%20{{request.build_absolute_uri}}">
+						<img src="/static/img/twitter.png"/>
+					</a>
+				</li>
+				<li>
+					<a href='https://plus.google.com/share?url={{request.build_absolute_uri}}'>
+						<img src="/static/img/google-plus.png"/>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/shareArticle?mini=true&url={{request.build_absolute_uri}}&title={{post.title}}&summary={{share_string}}&source={{request.build_absolute_uri}}">
+						<img src="/static/img/linkedin.png"/>
+					</a>
+				</li>
+				
+			</ul>
+		</div>
+		
+		<div class="block-post-content">
+			{{ post.richtextuploads|safe }}
+		</div>
+	</div>
+</section>
+
 	<section class="drawer -blog">
 		<div class="blocks-container">
-			<div style="float:right; margin-top:40px;" class="search-content">
-				<form method="GET" action="">
-					<input type="text" name="q" placeholder="Search" value="{{ request.GET.q }}" />
-					<input type="submit" value="Search" />
-				</form>
-			</div>
+			
 		    <div class="post">
 		       	<div class="content">
-					<h2>{{ post.title }}</h2>
-					{% if post.image  %}
-						<img src="{{ post.image.url }}">
-					{% endif %}
-										
-					<div class="social-link">
 					
-						<ul>
-							<li>
-								<a href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_uri}}">Facebook</a>
-							</li>
-							<li>
-								<a href="https://twitter.com/home?status={{share_string|truncatewords:5}}%20{{request.build_absolute_uri}}">Twitter</a>
-							</li>
-							<li>
-								<a href='https://plus.google.com/share?url={{request.build_absolute_uri}}'>Google</a>
-								
-							</li>
-							<li>
-								<a href="https://www.linkedin.com/shareArticle?mini=true&url={{request.build_absolute_uri}}&title={{post.title}}&summary={{share_string}}&source={{request.build_absolute_uri}}">Linkedin</a>
-							</li>
-							
-						</ul>
-					</div>
+										
+					
 					<small>Written by {{ post.author.get_full_name }} on {{ post.published }} in <a href="{{post.category.get_absoulte_url}}">{{ post.category }}</a></small>
 					{{ post.content|linebreaks }}
 					
 					<hr>
 
-					{{ post.richtextuploads|safe }}
-					{{ post.richtext|safe }}
+					
 
 					<hr>
 					<div class="page-header">

@@ -956,7 +956,56 @@ footer{
     color: #fff;
 }
 
+/* Blog Post
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+
+/* Section 1 - Blog section header
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* Section 1 - Blog section content
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.social-link{
+    position: absolute;
+    left: 3%;
+    top: 40px;
+}
+
+.social-link h3{
+    text-transform:uppercase;
+}
+
+.social-link ul{
+    padding:0px;
+    list-style-type:none;
+}
+
+.social-link li{
+    width:45px;
+}
+
+.social-link li a{
+    width:100%;
+}
+
+.social-link li a img{
+    width:100%;
+}
+
+.block-post-content{
+    display: block;
+    margin: 0px auto;
+    width: 70%;
+}
+
+.block-post-content img {
+    width: 84%;
+    text-align: center;
+    margin: 0px auto;
+    display: block;
+}
 
 
 
