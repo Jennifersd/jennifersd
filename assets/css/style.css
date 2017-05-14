@@ -68,7 +68,8 @@ a{
     background-size: 48px 48px;
     padding-left: 89px;*/
     max-width: 1280px;
-    height: 56.15px;
+    /*height: 56.15px;*/
+    height: 56px;
     box-sizing: border-box;
     font-size: 18px;
     line-height: 24px;
@@ -1244,9 +1245,92 @@ __________________________________________________ */
 /* Section 1 - Add comment
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-.block-comment-content {
+.block-comments{
+    display: block;
+    width: 100%;
+    margin:60px 0px 0px 0px;
+    float:left;
+}
+
+.block-comments-content {
     display: block;
     margin: 0px auto;
     width: 70%;
+}
+
+.block-comments-content h1 {
+    text-align: center;
+    color: #32325d;
+    font-size: 36px;
+    line-height: 32px;
+    font-weight: 400;
+    margin: 20px 0px 15px 0px;
+}
+
+.block-comments-content h2 {
+	color: #6b7c93;
+    text-align: center;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    width: 700px;
+    margin: 0px auto;
+    letter-spacing: 1px;
+}
+
+.block-comments-content .post-form{
+    display: block;
+    width: 100%;
+    margin-top:30px;
+}
+
+.block-comments-content .form-group{
+    display: block;
+    width: 100%;
+    margin-top:25px;
+}
+
+.block-comments-content label{
+    display: block;
+    width: 100%;
+    text-align: left;
+    color: #32325d;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 600;
+    margin-bottom:15px;
+}
+
+
+.block-comments-content .form-group input, .block-comments-content .form-group textarea{
+    display: block;
+    width: 100%;
+    background-color:#fafafa;
+    border:none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 13px;
+    color:#819dbb;
+}
+
+.block-comments-content .form-group input:focus, .block-comments-content .form-group textarea:focus{
+    color:#819dbb;
+}
+
+.button-comment{
+    float: right;
+    width: auto;
+    color: #fff;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    background: #ff3569;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 18px;
+    transition: background-color 0.5s ease;
+    border: none;	
+    margin:20px 0px 0px 0px;
 }
 
