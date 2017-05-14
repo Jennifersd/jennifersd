@@ -29,7 +29,7 @@
 
 <section class="drawer -post-content">
 	<div class="blocks-container">
-		<div class="social-link">	
+		<div id="social-fixed" class="social-link">	
 			<h3>Compartir</h3>		
 			<ul>
 				<li>
@@ -69,25 +69,30 @@
 					<span>{{ post.author.get_full_name }}</span> Publicado en: {{ post.published }} en <a href="{{post.category.get_absoulte_url}}">{{ post.category }}</a>
 				</div>
 				<div class="author-content">
-					<p>Uniquely drive error-free supply chains for collaborative architectures. Continually visualize fully researched schemas vis-a-vis standards compliant synergy.</p>
+					<p>Uniquely drive error-free supply chains for collaborative architectures. Continually visualize fully researched schemas vis-a-vis standards compliant synergy.Uniquely drive error-free supply chains for collaborative architectures. Continually visualize fully researched schemas vis-a-vis standards compliant synergy.</p>
 				</div>
 			</div>
 		</div>
 		<div class="blog-post-comments">
-			<div class="post-comment-title">
-				<p><span>Comentarios</span>( Número de comentarios {{ post.comments.count }} )</p>
-				<a href="{% url 'blog:add_comment' slug=post.slug %}">
-					<button type="button">Escribe un <strong>Comentario</strong></button>
-				</a>
-			</div>
-			{% for comment in post.comments.all %}
-				<div class="post-comment-content">
-					<div class="post-comment-conten-heading">{{ comment.user }} commented on {{ comment.created }}</div>
-					<div class="post-comment-conten-body">{{ comment.body }}</div>
+			<div class="blog-content-comments">
+				<div class="post-comment-title">
+					<p><span>Comentarios</span> ( Número de comentarios {{ post.comments.count }} )</p>
+					<a href="{% url 'blog:add_comment' slug=post.slug %}">
+						<button type="button">Escribe un <strong>Comentario</strong></button>
+					</a>
 				</div>
-			{% empty %}
-				<p>Aún no tenemos ningún comentario ¡Venga!</p>
-			{% endfor %}
+				{% for comment in post.comments.all %}
+					<div class="post-comment-content">
+						<div class="post-comment-conten-heading"><span>{{ comment.user }}</span> comentado en {{ comment.created }}</div>
+						<div class="post-comment-conten-body"><p>{{ comment.body }}</p></div>
+					</div>
+				{% empty %}
+					<div class="post-not-comment-content">
+						<p>Aún no tenemos ningún comentario ¡Venga!</p>
+					</div>
+				{% endfor %}
+				
+			</div>
 		</div>
 	</div>
 </section>

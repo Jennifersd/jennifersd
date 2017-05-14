@@ -167,11 +167,15 @@ __________________________________________________________
 	  color: #FFF;
 	  font-weight: 100;
 	  text-decoration: none;
-	      font-size: 20px;
-    line-height: 2.25;
+	  font-size: 20px;
+      line-height: 2.25;
 	  font-weight: 200;
 	  width: 100%;
 	  padding:0px 10px;
+	}
+	
+	.header-wrap.header-opened{
+		z-index:4 !important;
 	}
 	
 	.header-container.menu-opened {
@@ -182,6 +186,7 @@ __________________________________________________________
 	  transition: all 0.3s ease-in, background 0.5s ease-in;
 	  -webkit-transition-delay: 0.25s;
 	          transition-delay: 0.25s;
+	          z-index:4;
 	}
 	
 	.header-container.menu-opened .burger-container {
@@ -322,8 +327,9 @@ __________________________________________________________
 	–––––––––––––––––––––––––––––––––––––––––––––––––– */	
 	
 	.-blog h3 {
-	    font-size: 28px !important; 
+	    font-size: 25px !important; 
 	    line-height: 33px !important; 
+	    margin:15px 0px !important;
 	}
 	
 	.-blog .text-blog-home {
@@ -351,8 +357,9 @@ __________________________________________________________
 	–––––––––––––––––––––––––––––––––––––––––––––––––– */	
 	
 	.-resources h3 {
-	    font-size: 28px !important; 
+	    font-size: 25px !important; 
 	    line-height: 33px !important; 
+	    margin:15px 0px !important;
 	}
 	
 	.-resources .text-resources-home {
@@ -509,7 +516,91 @@ __________________________________________________________
 	.nav-pagination {
 	    padding: 0px !important;
 	}
-
+	
+	/* Blog Post
+	–––––––––––––––––––––––––––––––––––––––––––––––––– */
+	
+	/* Section 1 - Blog section header
+	–––––––––––––––––––––––––––––––––––––––––––––––––– */
+	
+	/* Section 1 - Blog section content
+	–––––––––––––––––––––––––––––––––––––––––––––––––– */
+	
+	.block-post-content {
+	    width: 100% !important;
+	}
+	
+	.social-link {
+	   	position: relative !important;
+	    left: 0 !important;
+	    top: 0 !important;
+	}
+	
+	.social-link.fixed-nav {
+	    position: relative !important;
+	    top: 0 !important;
+	}
+	
+	.social-link h3{
+		display:none;
+	}
+	
+	.social-link ul {
+	    width: 64% !important;
+	}
+	
+	.social-link li {
+	    width: 19% !important;
+	    margin: 0% 2% !important;
+	    display:inline-block;
+	}
+		
+	.block-post-content h2 {
+	    font-size: 25px !important;
+	    line-height: 33px !important;
+	}
+	
+	.block-post-content img {
+	    width: 100% !important;
+	}
+	
+	.block-post-categories, .block-post-author{
+		width: 100% !important;
+	}
+	
+	.post-author-image {
+	    width: 20% !important;
+	}
+	
+	.post-author-data{
+		width: 80% !important;
+	}
+	
+	.post-author-image img {
+	    width: 61px !important;
+	    height: 61px !important;
+	    position: relative;
+	}
+	
+	.blog-post-comments {
+		width: 100% !important;
+	}
+	
+	.post-comment-title p {
+	    font-size: 19px !important;
+	    width: 100% !important;
+	    text-align:center !important;
+	}
+	
+	.post-comment-title a button {
+	    float: none !important;
+	    margin: 0px auto;
+	    display: block;
+	}
+	
+	.post-comment-content{
+		margin:5px 0px 0px 0px;
+	}
 }
 
 
