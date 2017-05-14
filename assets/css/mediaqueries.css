@@ -348,7 +348,7 @@ __________________________________________________________
 	    box-shadow: none !important;
 		-webkit-box-shadow: none !important;
 		-moz-box-shadow: none !important;
-		border-top: 1px solid #d8d6d6;
+		border-bottom: 1px solid #d8d6d6;
 		padding:15px !important;
 		max-width: 100% !important;
 	}

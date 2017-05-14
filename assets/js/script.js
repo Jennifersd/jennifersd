@@ -16,8 +16,14 @@ window.onload = function(){
 
 };
 
-// Desplegable categorias
+
+// -----------------------------------------------
+// -----------------------------------------------
+
 $(document).ready(function(){
+	
+	// Nav categories
+	
 	(function() {
 		$('.blocks-container > h3').click(function() {
 			    $( ".blocks-container > ul" ).slideToggle( "slow" );
@@ -25,22 +31,28 @@ $(document).ready(function(){
 
 	})();
 	
+	// Social fixed scroll
+
 	(function() {
 	  function fixDiv() {
 	    var $cache = $('#social-fixed');
 	    if ($(window).scrollTop() > 750){
-	      
-	      $cache.addClass("fixed-nav");
-
+	    	$cache.addClass("fixed-nav");
 		} else {
 			$cache.removeClass("fixed-nav");
-		}
-	     
-	      
+		} 
 	  }
 	  $(window).scroll(fixDiv);
 	  fixDiv();
 	})();
+	
+	// Scroll bottom to content post
+	
+	jQuery('#button-header-post').click(function(){
+	    if(jQuery('#view-post').is(":visible")){
+	        jQuery("html, body").animate({scrollTop: jQuery('#view-post').offset().top});
+	    }
+	});
 
 	
 });

@@ -19,7 +19,7 @@
         
         <script type="text/javascript"  src="{% static 'js/script.js' %}"></script>
     </head>
-    <body class="hub" id="{% block id %}{% endblock %}">
+    <body class="hub {% block classes %}{% endblock %}" id="{% block id %}{% endblock %}">
     	<div class="container">
     		{% include 'blog/messages.html' %}
 	        {% include 'blog/header.html' %}

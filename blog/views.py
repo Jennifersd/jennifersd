@@ -60,7 +60,7 @@ def list_of_post_by_category(request, category_slug):
             Q(author__first_name__icontains=query) |
             Q(author__last_name__icontains=query)
             ).distinct()    
-    paginator = Paginator(post, 2)
+    paginator = Paginator(post, 3)
     page = request.GET.get('page')
     try:
         posts = paginator.page(page)

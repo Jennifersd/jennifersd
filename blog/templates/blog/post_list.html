@@ -13,8 +13,8 @@
 				<h2>Efficiently matrix stand-alone mindshare via quality markets. Dramatically promote e-business internal or "organic" sources without alternative testing procedures.
 Efficiently matrix stand-alone mindshare.</h2>
 				<div class="list-button-header">
-					<a id="button-header-blog" href="">Descubre más en <strong>blog</strong></a>
-					<a id="button-header-recursos" href="">Quieres aprender, visita <strong>recursos</strong></a>
+					<a id="button-header-blog" href="/blog">Descubre más en <strong>blog</strong></a>
+					<a id="button-header-recursos" href="/recursos">Quieres aprender, visita <strong>recursos</strong></a>
 				</div>
 			</div>
 		</div>
@@ -34,7 +34,7 @@ Efficiently matrix stand-alone mindshare.</h2>
 						<small>{{ post.author.get_full_name }}</small>
 						{% if post.image  %}
 							<div class="img-list-blog-home">
-								<a href="{{post.category.get_absoulte_url}}">
+								<a href="{{post.get_absoulte_url}}">
 									<img src="{{ post.image.url }}">
 								</a>
 							</div>

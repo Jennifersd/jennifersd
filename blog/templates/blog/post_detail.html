@@ -12,7 +12,7 @@
 				<h1>{{ post.title }}</h1>
 				<h2>{{ post.content|truncatewords:25 }}</h2>
 				<div class="list-button-post">
-					<a id="button-header-post" href="{{post.category.get_absoulte_url}}">Descubre más en <strong>blog</strong></a>
+					<a id="button-header-post">Leer más sobre este <strong>post</strong></a>
 				</div>
 			</div>
 		</div>
@@ -27,7 +27,7 @@
 	</div>
 </section>
 
-<section class="drawer -post-content">
+<section id="view-post" class="drawer -post-content">
 	<div class="blocks-container">
 		<div id="social-fixed" class="social-link">	
 			<h3>Compartir</h3>		

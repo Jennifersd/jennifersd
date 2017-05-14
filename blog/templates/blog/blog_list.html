@@ -1,6 +1,6 @@
 {% extends 'blog/base.html' %}
 
-{% block title %} Jennifersd | Home {% endblock %}
+{% block title %} Blog Jennifersd  {% endblock %}
 {% block description %} Jennifersd {% endblock %}
 {% block id %} blog {% endblock %}
 
@@ -13,7 +13,7 @@
 				<h1>{{ post.title }}</h1>
 				<h2>{{ post.content|truncatewords:25 }}</h2>
 				<div class="list-button-post">
-					<a id="button-header-post" href="{{post.category.get_absoulte_url}}">Descubre más en <strong>blog</strong></a>
+					<a id="button-header-post" href="{{post.get_absoulte_url}}">Descubre más de este <strong>post</strong></a>
 				</div>
 			</div>
 		</div>
@@ -44,7 +44,7 @@
 						<small>{{ post.author.get_full_name }}</small>
 						{% if post.image  %}
 							<div class="img-list-blog">
-								<a href="{{post.category.get_absoulte_url}}">
+								<a href="{{post.get_absoulte_url}}">
 									<img src="{{ post.image.url }}">
 								</a>
 							</div>

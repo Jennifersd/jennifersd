@@ -159,6 +159,10 @@ a{
 	display:none;
 }
 
+.menu-background .header-wrap{
+	background-color:#47346b;
+}
+
 /* Footer
 __________________________________________________ */
 
@@ -1234,5 +1238,15 @@ footer{
     margin: 0px;
 }
 
+/* Comments
+__________________________________________________ */
 
+/* Section 1 - Add comment
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.block-comment-content {
+    display: block;
+    margin: 0px auto;
+    width: 70%;
+}
 
