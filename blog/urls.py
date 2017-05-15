@@ -12,7 +12,7 @@ urlpatterns = [
     url(r'^backend/post/$', views.list_of_post_backend, name='list_of_post_backend'),
     url(r'^backend/(?P<slug>[-\w]+)/edit/$', views.edit_post, name='edit_post'),
     url(r'^backend/(?P<slug>[-\w]+)/delete/$', views.delete_post, name='delete_post'),
-    
+    url(r'^contacto$', views.add_contact, name='add_contact'),
     
     #url(r'^post/(?P<pk>[0-9]+)/$', views.post_detail, name="post_detail"),
     #url(r'^post/new/$', views.post_new, name='post_new'), # Url editar los post

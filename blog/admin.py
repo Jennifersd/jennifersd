@@ -1,12 +1,11 @@
 from django.contrib import admin
-from .models import Post, Category, Comment
+from .models import Post, Category, Comment, Contact
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug')
     prepopulated_fileds = {'slug': ('name',)}
     
 admin.site.register(Category, CategoryAdmin)
-
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'author', 'published', 'status')
@@ -21,4 +20,9 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ('user', 'email', 'approved')
     
 admin.site.register(Comment, CommentAdmin)
+
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('email_contact', 'subjet_contact', 'created_contact')
+    
+admin.site.register(Contact, ContactAdmin)
 

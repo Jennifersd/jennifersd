@@ -7,9 +7,10 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.utils import timezone
 from .models import Post, Category, Comment
-from django.http import Http404
+from django.http import Http404, HttpResponse, HttpResponseRedirect
+
 from django.contrib import messages
-from .forms import CommentForm, PostForm
+from .forms import CommentForm, PostForm, ContactForm
 
 from django.contrib.auth.decorators import login_required
 
@@ -123,6 +124,22 @@ def add_comment(request, slug):
     context = {'form': form}
     return render(request, template, context)
 
+def add_contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            contact = form.save(commit=False)
+            contact.save()
+            messages.success(request, "Successfully Contact")
+            return redirect('blog:add_contact')
+    else:
+        form = ContactForm()
+    template = 'blog/contact.html'
+    context = {'form': form}
+    return render(request, template, context)
+
+#def success(request):
+#   return HttpResponse('Success! Thank you for your message.')
 
 #----------------------------------------------------------------
 # ---------------------- Backend --------------------------------

@@ -31,7 +31,6 @@ class Post(models.Model):
         ('draft', 'Draft'),
         ('published', 'Published')
     )
-    #richtext = RichTextField(config_name='awesome_ckeditor', blank=True)
     richtextuploads = RichTextUploadingField(config_name='awesome_ckeditor', blank=True)
     #image = models.FileField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True, height_field='height_field', width_field='width_field')
@@ -83,5 +82,15 @@ class Comment (models.Model):
     
     def __str__(self):
         return self.user
+
+ 
+class Contact (models.Model):
+    email_contact = models.CharField(max_length=250)
+    subjet_contact = models.CharField(max_length=250)
+    content_contact = models.TextField()
+    created_contact = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.subjet_contact
 
   
