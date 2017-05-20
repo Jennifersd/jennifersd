@@ -22,6 +22,14 @@ from django.contrib.auth.decorators import login_required
 #    post = get_object_or_404(Post, pk=pk)
 #    return render(request, 'blog/post_detail.html', {'post': post})
 
+def list_of_post_resource(request):
+    template = 'blog/resource/resource_list.html'
+    return render(request, template)
+
+def list_of_post_tools(request):
+    template = 'blog/tools/tools_list.html'
+    return render(request, template)
+
 def blog_list(request):
     #post = Post.objects.filter(updated__lte=timezone.now()).order_by('published')
     categories = Category.objects.all()
