@@ -734,7 +734,7 @@ footer{
     border-bottom: none;
 }
 
-@media (max-width: 767px){
+@media (max-width: 900px){
 	.list-categories{
 		display:none;
 	}
@@ -1332,5 +1332,61 @@ __________________________________________________ */
     transition: background-color 0.5s ease;
     border: none;	
     margin:20px 0px 0px 0px;
+}
+
+/* Comming Soon
+__________________________________________________ */
+
+/* Section 1 - Comming Soon
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.block-comming-soon{
+    display: block;
+    width: 100%;
+    margin:60px 0px 0px 0px;
+    float:left;
+}
+
+.block-comming-soon-content {
+    display: block;
+    margin: 0px auto;
+    width: 70%;
+}
+
+.block-comming-soon-content h1 {
+    text-align: center;
+    color: #32325d;
+    font-size: 36px;
+    line-height: 32px;
+    font-weight: 400;
+    margin: 20px 0px 15px 0px;
+}
+
+.block-comming-soon-content h2 {
+	color: #6b7c93;
+    text-align: center;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    width: 700px;
+    margin: 0px auto;
+    letter-spacing: 1px;
+}
+
+.comming-soon-img{
+    display: block;
+    width: 100%;
+    margin-top:30px;	
+}
+
+.comming-soon-img div{
+    display: block;
+    margin: 0px auto;
+    width: 80%;	
+}
+
+.comming-soon-img img{
+    display: block;
+    width: 100%;	
 }
 

@@ -22,6 +22,10 @@ from django.contrib.auth.decorators import login_required
 #    post = get_object_or_404(Post, pk=pk)
 #    return render(request, 'blog/post_detail.html', {'post': post})
 
+def services_web(request):
+    template = 'blog/services/services_web_form.html'
+    return render(request, template)
+
 def list_of_post_resource(request):
     template = 'blog/resource/resource_list.html'
     return render(request, template)
