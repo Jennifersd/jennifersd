@@ -439,6 +439,7 @@ Tablet CSS
 	.-post-block-text h1 {
 	    font-size: 28px !important; 
 	    line-height: 33px !important; 
+	    width:100% !important;
 	}
 	
 	.-post-block-text h2 {
@@ -1112,6 +1113,7 @@ Tablet CSS
 	.-post-block-text h1 {
 	    font-size: 28px !important; 
 	    line-height: 33px !important; 
+	    width:100% !important;
 	}
 	
 	.-post-block-text h2 {
