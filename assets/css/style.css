@@ -9,8 +9,9 @@
 
 
 
-/* Base
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* 
+* Base
+*/
 
 .body, html, body{
 	font-family: 'Noto Sans', sans-serif;
@@ -44,8 +45,9 @@ a{
 	display: flex; 	
 }
 
-/* Header
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* 
+* Header
+*/
 
 .hub .header-wrap {
     padding: 10px 24px;
@@ -164,8 +166,9 @@ a{
 	background-color:#47346b;
 }
 
-/* Footer
-__________________________________________________ */
+/*
+* Footer
+*/
 
 footer{
 	position:relative;
@@ -269,8 +272,9 @@ footer{
 }
 
 
-/* Home
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* 
+* Home
+*/
 
 .hub .drawer {
     position: relative;
@@ -278,8 +282,9 @@ footer{
     padding: 40px 0;
 }
 
-/* Section 1 - Home
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* 
+* Section 1 - Home
+*/
 
 .hub .-material {
     background-color: #47346b;
@@ -372,8 +377,9 @@ footer{
 }
 
 
-/* Section 2 - Blog
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* 
+* Section 2 - Blog
+*/
 
 .-blog h3 {
 	text-align:center;
@@ -499,8 +505,9 @@ footer{
 }
 
 
-/* Section 3 - Resources
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* 
+* Section 3 - Resources
+*/
 
 .-resources{
 	background:#f2f3f6;
@@ -548,8 +555,9 @@ footer{
 	position: relative;
 }
 
-/* Section 4 - Web
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* 
+* Section 4 - Web
+*/
 
 .-web{
 	background-color: #47346b;
@@ -617,12 +625,13 @@ footer{
 	width: 100%;
 }
 
-/* Blog
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* 
+* Blog
+*/
 
-
-/* Section 1 - Blog
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* 
+* Section 1 - Blog
+*/
 
 .hub .blogs {
     position: relative;
@@ -766,6 +775,7 @@ footer{
 .content-list-blog{
 	width:100%;
 	margin-top:40px;
+	display:inline-block;
 }
 
 .list-blog{
@@ -1239,11 +1249,13 @@ footer{
     margin: 0px;
 }
 
-/* Comments
-__________________________________________________ */
+/* 
+* Comments
+*/
 
-/* Section 1 - Add comment
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* 
+* Section 1 - Add comment
+*/
 
 .block-comments{
     display: block;
@@ -1335,11 +1347,9 @@ __________________________________________________ */
 }
 
 /* Comming Soon
-__________________________________________________ */
-
+*/
 /* Section 1 - Comming Soon
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
+*/
 .block-comming-soon{
     display: block;
     width: 100%;
@@ -1390,3 +1400,18 @@ __________________________________________________ */
     width: 100%;	
 }
 
+/* Adsense Google
+*/
+/* Section Blog - Adsense
+*/
+.ads-google{
+	display: inline-block;
+	width:100%;
+	margin:20px 0px;
+}
+
+.ads-google-content{
+    display: inline-block;
+	margin:0px auto;
+	width:60%;
+}
