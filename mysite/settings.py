@@ -25,7 +25,7 @@ SECRET_KEY = 'zh4vyn%(k1%wa5&!#5-dnm9cn)&%x8y0qobt8z9@h$*f_d1=cq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['jennifersd.com' , '172.0.0.1' , '178.62.125.104' , '10.211.55.4']
+ALLOWED_HOSTS = ['jennifersd.com' , 'www.jennifersd.com'  , '172.0.0.1' , '178.62.125.104' , '10.211.55.4']
 
 
 # Application definition
