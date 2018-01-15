@@ -40,7 +40,7 @@ INSTALLED_APPS = (
     'ckeditor',
     'ckeditor_uploader',
     'django_hosts',
-    'django_baseurl'
+    'django_baseurl',
 ) 
 
 MIDDLEWARE_CLASSES = (
