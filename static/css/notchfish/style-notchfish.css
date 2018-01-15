@@ -1,0 +1,816 @@
+/*
+General
+*/
+
+.body, html, body{
+	font-family: 'Roboto', sans-serif;
+	background: #ffffff;
+}
+
+.container {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex; 
+	-webkit-flex-flow:row wrap;
+	-ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    margin: 0 auto;
+    align-items: stretch;
+    background: #fff;
+}
+
+a{
+	text-decoration:none;
+}
+
+.flex{
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex; 	
+}
+
+.blocks-container {
+    max-width: 1192px;
+    padding: 0 48px;
+    margin: auto;
+}
+
+/* 
+* Header
+*/
+
+.hub .header-wrap {
+    padding: 30px 24px 10px 24px;
+    background-color: transparent;
+    position:absolute;
+    z-index: 2;
+    cursor: default;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0;
+    box-sizing: border-box;
+}
+
+.header-container{
+	position: relative;
+    max-width: 1280px;
+    height: 56px;
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.header-container span{
+    float: left;
+    width: auto;
+    font-weight: 300;
+    color: #111111;
+    font-size: 20px;
+    padding: 8px 0px;
+}
+
+.header-container h1{
+    background: transparent url('/static/img/logo-jennifersd-green.svg') no-repeat left center;
+    background-size: 167px 41.15px;
+    -webkit-background-size: 167px 41.15px;
+    -moz-background-size: 167px 41.15px;
+    margin:0px;
+    width:170px;
+    font-weight: 400;
+    font-size: 20px;
+    float: left;
+}
+
+.header-container h1:hover{
+    opacity:.8;
+    -moz-transition:all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -o-transition:all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -webkit-transition:all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+}
+
+.header-container h1 a{
+    display: block;
+    margin: 0;
+    text-indent: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 43.15px;
+    opacity:0;
+}
+
+
+/*
+Section Intro
+*/
+
+.section-intro{
+    background-color: #fff;
+    color: #111111;
+    padding-top: 0;
+    background-image: url(/static/img/bg-section-intro.png);
+    background-position: top right;
+    background-size: 81% auto;
+    -webkit-background-size: 81% auto;
+    -moz-background-size: 81% auto;
+    width: 100%;
+    background-repeat: no-repeat;
+}
+
+.content-intro{
+    position: relative;
+    padding-bottom: 40%;
+    margin-bottom: 8px;
+    height: 0;
+}
+
+.wrapper {
+    box-sizing: border-box;
+    padding-left: 24px;
+    margin-top: 173px;
+    width: 100%;
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex; 
+}
+
+.text-intro{
+    width: 50%;
+}
+
+.text-intro h1{
+    width: 50%;
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    letter-spacing: 6px;
+    font-weight: 900;
+    color: #284862;
+}
+
+.text-intro h1 span{
+    color:#a9e4dc; 
+}
+
+.text-intro h2{
+    font-family: 'Roboto', serif;
+    font-size: 19px;
+    font-weight: 300;
+    color: #111111;
+    line-height: 31px;
+    letter-spacing: 1px;
+    width: 419px;
+}
+
+.text-intro span{
+    width: 100%;
+    color: #999999;
+    letter-spacing: 1px;
+}
+
+.text-intro a{
+    width: auto;
+    font-size: 14px;
+    display: inline-block;
+    letter-spacing: 1px;
+    font-weight: 400;
+    background: #284862;
+    padding: 16px 39px;
+    margin-top: 40px;
+    color: #fff;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    text-align: center;
+}
+
+.product-intro{
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: -110px;
+}
+
+.product-free-main{
+    width: 350px;
+    margin: 0px auto;
+    position: relative;
+}
+
+.product-free-main .device-background{
+    width: 100%;
+}
+
+.product-free-main .img-notch-background{
+    width: 100%;
+    position: absolute;
+}
+
+.product-free-main .switch-images-button{
+    position: absolute;
+    bottom: 90px;
+    z-index: 9;
+    margin: auto;
+    left: -3%;
+    right: 0;
+    width: 58%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-free-main .switch-images-button a{
+    -webkit-box-shadow: 0px 0px 27px -2px rgba(0,0,0,0.21);
+    -moz-box-shadow: 0px 0px 27px -2px rgba(0,0,0,0.21);
+    box-shadow: 0px 0px 27px -2px rgba(0,0,0,0.21);
+}
+
+.button-withnotch{
+    width: 70px;
+    background: #CCF9B9;
+    height: 70px;
+    border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    color: #284862;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 400;
+    display: -webkit-box;      
+	display: -moz-box;         
+	display: -ms-flexbox;      
+	display: -webkit-flex;     
+	display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    position:relative;
+}
+
+.button-withnotch-mask{
+    width: 70px;
+    height: 70px;
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, black 100%, rgba(0, 0, 0, 0.6) 50%);
+    mask-image: radial-gradient(circle at 50% 50%, black 100%, rgba(0, 0, 0, 0.6) 50%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+}
+
+.mask{
+    position: absolute;
+    top: -26px;
+    width: 76%;
+    height: 41px;
+    background: #e3fada;
+    -webkit-box-shadow: 0px 0px 27px -2px rgba(0,0,0,0.21);
+    -moz-box-shadow: 0px 0px 27px -2px rgba(0,0,0,0.21);
+    box-shadow: 0px 0px 27px -2px rgba(0,0,0,0.21);
+    border-radius: 14px;
+    -moz-border-radius: 14px;
+    -webkit-border-radius: 14px;
+    margin: 0px auto;
+    left: 0;
+    right: 0;
+}
+
+.button-withoutnotch{
+    width: 70px;
+    background: #F9B9B9;
+    height: 70px;
+    border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    color: #284862;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 400;
+    display: -webkit-box;      
+	display: -moz-box;         
+	display: -ms-flexbox;      
+	display: -webkit-flex;     
+	display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}
+
+.button-withnotch .switch-content-button, .button-withoutnotch .switch-content-button{
+    padding: 0px 5px;
+}
+
+.button-withnotch .switch-content-button span, .button-withoutnotch .switch-content-button span{
+    padding: 0px 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.product-free-main .notifications-wallpaper{
+    position: absolute;
+    top: 90px;
+    z-index: 9;
+    margin: auto;
+    left: -4%;
+    right: 0;
+    width: 64%;
+    display: -webkit-box;      
+	display: -moz-box;         
+	display: -ms-flexbox;      
+	display: -webkit-flex;     
+	display: flex; 
+    flex-direction: column;
+}
+
+.product-free-main .notifications-content-wallpaper{
+    width: 100%;
+    background-color:rgba(255, 255, 255, 0.77);
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+.product-free-main .notifications-withoutnotch{
+    display: -webkit-box;      
+	display: -moz-box;         
+	display: -ms-flexbox;      
+	display: -webkit-flex;     
+	display: flex; 
+    flex-direction: column;
+}
+
+.product-free-main .notifications-header{
+    display: -webkit-box;      
+    display: -moz-box;         
+    display: -ms-flexbox;      
+    display: -webkit-flex;     
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-free-main .notifications-nameapp{
+    display: -webkit-box;      
+    display: -moz-box;         
+    display: -ms-flexbox;      
+    display: -webkit-flex;     
+    display: flex; 
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.product-free-main .notifications-nameapp img{
+    width: 17px;
+    height: 17px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    margin-right: 5px;
+}
+.product-free-main .notifications-nameapp p{
+    margin: 0px;
+    text-align: left;
+    color:#858585;
+    font-size: 11px;
+}
+
+.product-free-main .notifications-header span{
+    text-align: right;
+    color:#858585;
+    font-size: 11px;
+}
+
+.product-free-main .notifications-content p{
+    font-size: 12.5px;
+    padding: 0px;
+    margin: 0px;
+    color: #4c4c4c;
+    margin-top: 8px;
+    letter-spacing: 0.3px;
+}
+
+.buttonPreview{
+    color: #fff;
+    position: absolute;
+    top: 90px;
+    z-index: 9999;
+    margin: auto;
+    left: -4%;
+    right: 0;
+    width: 62%;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    padding: 13px 0px;
+    background: rgba(96, 125, 139, 0.8117647058823529);
+    font-size: 14px;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 0px 0px 27px -2px rgba(0,0,0,0.21);
+    -moz-box-shadow: 0px 0px 27px -2px rgba(0,0,0,0.21);
+    box-shadow: 0px 0px 27px -2px rgba(0,0,0,0.21);
+}
+
+.buttonPreview span{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.premium .buttonPreview{
+    top:140px;
+}
+
+/*
+Section Wallpaper
+*/
+
+.section-wallpaper{
+    width: 100%;
+    position: relative;
+}
+
+.bg-top-wallpaper{
+    background-color:transparent;
+    color: #111111;
+    padding-top: 0;
+    background-image: url(/static/img/bg_grey_top.png);
+    background-position: top center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    width: 100%;
+    background-repeat: no-repeat;
+    height: 150px;
+    position: absolute;
+    top:0;
+    z-index: 99;
+    left: 0;
+}
+
+.bg-bottom-wallpaper{
+    background-color:transparent;
+    color: #111111;
+    padding-top: 0;
+    background-image: url(/static/img/bg_grey_bottom.png);
+    background-position: bottom center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    width: 100%;
+    background-repeat: no-repeat;
+    height: 180px;
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+}
+
+.wallpapers {
+    width: 100%;
+}
+
+.wallpapers .blocks-container{
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    position: relative;
+    background-color:#fafafa; 
+}
+
+.wallpaper {
+    width: 31%;
+}
+
+
+.wallpaper {
+    display: table;
+    padding-bottom: 10%;
+    position: relative;
+    z-index: 999;
+}
+
+
+.wallpaper:nth-child(3n+3) {
+    -webkit-transform: translateY(40%) translateZ(0);
+    -moz-transform: translateY(40%) translateZ(0);
+    transform: translateY(40%) translateZ(0);
+}
+
+
+.wallpaper:nth-child(3n+2) {
+    -webkit-transform: translateY(20%) translateZ(0);
+    -moz-transform: translateY(20%) translateZ(0);
+    transform: translateY(20%) translateZ(0);
+}
+
+.wallpaper .device-background{
+    width: 100%;
+}
+
+.wallpaper .img-notch-background{
+    width: 100%;
+    position: absolute;
+}
+
+.wallpaper .switch-images-button{
+    position: absolute;
+    bottom: 205px;
+    z-index: 9;
+    margin: auto;
+    left: -3%;
+    right: 0;
+    width: 58%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wallpaper .switch-images-button a{
+    -webkit-box-shadow: 0px 0px 27px -2px rgba(0,0,0,0.21);
+    -moz-box-shadow: 0px 0px 27px -2px rgba(0,0,0,0.21);
+    box-shadow: 0px 0px 27px -2px rgba(0,0,0,0.21);
+}
+
+.premium-wallpaper{
+    width: 100%;
+    display: block;
+    margin: 0px 0px 0px -2%;
+}
+
+.premium-wallpaper div{
+    margin: 0px auto;
+    width: 85px;
+}
+
+.premium-wallpaper div p{
+    width: 100%;
+    background-color: #fdc222;
+    text-align: center;
+    display: block;
+    box-sizing: border-box;
+    padding: 10px 10px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 400;
+    margin: 0px 0px 8px 0px;
+    line-height: 17px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 27px -2px rgba(0,0,0,0.21);
+    -moz-box-shadow: 0px 0px 27px -2px rgba(0,0,0,0.21);
+    box-shadow: 0px 0px 27px -2px rgba(0,0,0,0.21);
+}
+
+.premium-wallpaper div p span{
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+.wallpaper .notifications-wallpaper{
+    position: absolute;
+    top: 90px;
+    z-index: 9;
+    margin: auto;
+    left: -4%;
+    right: 0;
+    width: 64%;
+    display: -webkit-box;      
+	display: -moz-box;         
+	display: -ms-flexbox;      
+	display: -webkit-flex;     
+	display: flex; 
+    flex-direction: column;
+}
+
+.wallpaper .notifications-content-wallpaper{
+    width: 100%;
+    background-color:rgba(255, 255, 255, 0.77);
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+.wallpaper .notifications-withoutnotch{
+    display: -webkit-box;      
+	display: -moz-box;         
+	display: -ms-flexbox;      
+	display: -webkit-flex;     
+	display: flex; 
+    flex-direction: column;
+}
+
+.wallpaper .notifications-header{
+    display: -webkit-box;      
+    display: -moz-box;         
+    display: -ms-flexbox;      
+    display: -webkit-flex;     
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wallpaper .notifications-nameapp{
+    display: -webkit-box;      
+    display: -moz-box;         
+    display: -ms-flexbox;      
+    display: -webkit-flex;     
+    display: flex; 
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.wallpaper .notifications-nameapp img{
+    width: 17px;
+    height: 17px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    margin-right: 5px;
+}
+.wallpaper .notifications-nameapp p{
+    margin: 0px;
+    text-align: left;
+    color:#858585;
+    font-size: 11px;
+}
+
+.wallpaper .notifications-header span{
+    text-align: right;
+    color:#858585;
+    font-size: 11px;
+}
+
+.wallpaper .notifications-content p{
+    font-size: 12.5px;
+    padding: 0px;
+    margin: 0px;
+    color: #4c4c4c;
+    margin-top: 8px;
+    letter-spacing: 0.3px;
+}
+
+
+
+/*
+Section More Wallpapers 
+*/
+
+.section-more-wallpapers{
+    background-color: #fff;
+    padding-top: 0;
+    width: 100%;
+    margin-top: 36px;
+}
+
+.section-center-text{
+    margin: 0px auto;
+    width: 450px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-center-text p{
+    font-family: 'Roboto', serif;
+    font-size: 19px;
+    font-weight: 300;
+    color: #111111;
+    line-height: 31px;
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+
+}
+
+.section-center-text a{
+    width: 140px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    background: #284862;
+    padding: 16px 39px;
+    margin-top: 40px;
+    color: #fff;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    text-align: center;
+    margin: 0px auto;
+}
+
+/*
+Footer
+*/
+
+footer{
+    background-color: #fff;
+    color: #111111;
+    padding-top: 0;
+    background-image: url(/static/img/bg-section-footer.png);
+    background-position: bottom left;
+    background-size: 81% auto;
+    -webkit-background-size: 81% auto;
+    -moz-background-size: 81% auto;
+    width: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.footer-text{
+    width: 50%;
+    padding: 71px 0px 66px 0px;
+}
+
+.footer-text h2{
+    font-family: 'Playfair Display', serif;
+    font-weight: 300;
+    font-style: italic;
+    color: #111111;
+    font-size: 46px;
+}
+
+.footer-text h2 div{
+    font-size: 46px;
+    letter-spacing: 6px;
+    font-weight: 900;
+    color: #284862;
+    font-style: normal;
+    display: inline-block;
+}
+
+.footer-text h2 div span{
+    color: #a9e4dc;
+}
+
+.footer-text .description-footer{
+    font-family: 'Roboto', serif;
+    font-size: 19px;
+    font-weight: 300;
+    color: #111111;
+    line-height: 31px;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+.footer-text .description-footer span{
+    font-family: 'Playfair Display', serif;
+    font-weight: 300;
+    font-style: italic; 
+}
+
+.footer-menu{
+    position: absolute;
+    bottom:0;
+    max-width: 1192px;
+    padding: 0 48px;
+    margin: auto;
+    right: 0;
+}
+
+.footer-menu p{
+    text-align: right;
+}
+
+.footer-menu p img{ 
+    width: 14px;
+}

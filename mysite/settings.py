@@ -24,10 +24,7 @@ SECRET_KEY = 'zh4vyn%(k1%wa5&!#5-dnm9cn)&%x8y0qobt8z9@h$*f_d1=cq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = ['jennifersd.com' , 'www.jennifersd.com'  , '172.0.0.1' , '178.62.125.104' , '10.211.55.4']
-
-
+ALLOWED_HOSTS = ['jennifersd.com' , 'www.jennifersd.com'  , 'notchfish.jennifersd.com' , 'prueba.jennifersd.com'  , '127.0.0.1' , '178.62.125.104' , '10.211.55.4']
 # Application definition
 
 INSTALLED_APPS = (
@@ -39,11 +36,15 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'crispy_forms',
     'blog',
+    'notchfish',
     'ckeditor',
     'ckeditor_uploader',
-)
+    'django_hosts',
+    'django_baseurl'
+) 
 
 MIDDLEWARE_CLASSES = (
+    'django_hosts.middleware.HostsRequestMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -52,9 +53,15 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'django_hosts.middleware.HostsResponseMiddleware',
 )
 
 ROOT_URLCONF = 'mysite.urls'
+ROOT_HOSTCONF = 'mysite.hosts'
+DEFAULT_HOST = 'www'
+DEFAULT_REDIRECT_URL = 'http://www.jennifersd.com:8000'
+SITE_URL = 'jennifersd.com'
+
 
 TEMPLATES = [
     {
@@ -67,6 +74,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django_baseurl.context_processors.baseurl',
+                'mysite.context_processors.site',
             ],
         },
     },
@@ -188,10 +197,12 @@ CKEDITOR_CONFIGS = {
             'dialogui',
             'elementspath'
         ]),
-    }
-                    
-    
+    }    
 }
 
+# Settings Local and Production
 
-
+try: 
+    from .local_settings import *
+except ImportError:
+    print('Local settings failed')

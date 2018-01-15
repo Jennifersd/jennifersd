@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<section class="section-intro">
+    <div class="blocks-container">
+        <div class="content-intro">
+            <div class="wrapper">
+                <div class="text-intro">
+                    <h1>Notch<span>fish</span></h1>
+                    <h2>A collection of beautifully crafted wallpapers designed to the Apple iPhone X. <br><strong>See the premium wallpaper</strong></h2>
+                    <span>Select the wallpaper with nocth or without notch and download</span>
+                    <a href="#section-wallpapers">View wallpapers</a>
+                </div>
+                <div class="product-intro">
+                    <div class="product-free-main">
+                        {% for product in products|slice:":1" %}
+                            {% comment %} <div class="notifications-wallpaper">
+                                <div class="notification1 notifications-content-wallpaper wallpaperImg" style="display:none;">
+                                    <div class="notifications-withnotch">
+                                        <div class="notifications-header">
+                                            <div class="notifications-nameapp">
+                                                <img src="{% static 'img/icon-app-notchfish.png' %}"/>
+                                                <p>NOTCHFISH</p>
+                                            </div>
+                                            <span>9:22 AM</span>
+                                        </div>
+                                        <div class="notifications-content">
+                                            <p><strong>Ready!</strong> You can now download your wallpaper <strong>with Notch. <br><a href="{{ product.url_with_notch }}">Download here.</a></strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="notification2 notifications-content-wallpaper wallpaperImg" style="display:none;">
+                                    <div class="notifications-withoutnotch">
+                                        <div class="notifications-header">
+                                            <div class="notifications-nameapp">
+                                                <img src="{% static 'img/icon-app-notchfish.png' %}"/>
+                                                <p>NOTCHFISH</p>
+                                            </div>
+                                            <span>9:22 AM</span>
+                                        </div>
+                                        <div class="notifications-content">
+                                            <p><strong>Ready!</strong> You can now download your wallpaper <strong>without Notch. <br><a href="{{ product.url_without_notch }}">Download here.</a></strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> {% endcomment %}
+                            <div class="buttonPreview">See Preview <span class="wallpaper2">With Notch</span><span class="wallpaper1">Without Notch</span></div>
+                            <div class="switch-images-button">
+                                <a class="button-withnotch" href="{{ product.url_with_notch }}">
+                                    <div class="button-withnotch-mask">
+                                        <div class="switch-content-button">With <span>Notch</span></div>
+                                        <div class="mask"></div>
+                                    </div>
+                                </a>
+                                <a class="button-withoutnotch" href="{{ product.url_without_notch }}">
+                                    <div class="switch-content-button">Without <span>Notch</span></div>
+                                </a>
+                            </div>
+                            <img class="wallpaper1 img-notch-background" src="{{SITE_PROTOCOL_URL}}{{ product.image.url }}">
+                            <img class="wallpaper2 img-notch-background" src="{{SITE_PROTOCOL_URL}}{{ product.image_alt.url }}">
+                            <img class="device-background" src="{% static 'img/iphoneX.png' %}">
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="section-wallpapers" class="section-wallpaper">
+    <div class="bg-top-wallpaper"></div>
+    <div class="bg-center-wallpaper">
+        <div class="wallpapers">
+            <div class="blocks-container">
+                {% comment %} {% for product in products|slice:"1:" %} {% endcomment %}
+                {% for product in products %}
+                <div class="wallpaper {% if product.premium  %}premium {% endif %}">
+                    {% if product.premium  %}
+                        <div class="premium-wallpaper">
+                            <div><p>$ <span>{{ product.price }}</span></p></div>
+                        </div>
+                    {% endif %}
+                    {% comment %} <div class="notifications-wallpaper">
+                        <div class="notification1 notifications-content-wallpaper wallpaperImg" style="display:none;">
+                            <div class="notifications-withnotch">
+                                <div class="notifications-header">
+                                    <div class="notifications-nameapp">
+                                        <img src="{% static 'img/icon-app-notchfish.png' %}"/>
+                                        <p>NOTCHFISH</p>
+                                    </div>
+                                    <span>9:22 AM</span>
+                                </div>
+                                <div class="notifications-content">
+                                    <p><strong>Ready!</strong> You can now download your wallpaper <strong>with Notch. <br><a href="{{ product.url_with_notch }}">Download here.</a></strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notification2 notifications-content-wallpaper wallpaperImg" style="display:none;">
+                            <div class="notifications-withoutnotch">
+                                <div class="notifications-header">
+                                    <div class="notifications-nameapp">
+                                        <img src="{% static 'img/icon-app-notchfish.png' %}"/>
+                                        <p>NOTCHFISH</p>
+                                    </div>
+                                    <span>9:22 AM</span>
+                                </div>
+                                <div class="notifications-content">
+                                    <p><strong>Ready!</strong> You can now download your wallpaper <strong>without Notch. <br><a href="{{ product.url_without_notch }}">Download here.</a></strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+                    <div class="switch-images-button">
+                        <a class="button-withnotch" href="{{ product.url_with_notch }}">
+                            <div class="button-withnotch-mask">
+                                <div class="switch-content-button">With <span>Notch</span></div>
+                                <div class="mask"></div>
+                            </div>
+                        </a>
+                        <a class="button-withoutnotch" href="{{ product.url_without_notch }}">
+                            <div class="switch-content-button">Without <span>Notch</span></div>
+                        </a>
+                    </div>
+                    <div class="buttonPreview">See Preview <span class="wallpaper2">With Notch</span><span class="wallpaper1">Without Notch</span></div>
+                    <img class="wallpaper1 img-notch-background" src="{{SITE_PROTOCOL_URL}}{{ product.image.url }}">
+                    <img class="wallpaper2 img-notch-background" src="{{SITE_PROTOCOL_URL}}{{ product.image_alt.url }}">
+                    <img class="device-background" src="{% static 'img/iphoneX.png' %}">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="bg-bottom-wallpaper"></div>
+</section>
+
+{% comment %}
+<section class="section-more-wallpapers">
+    <div class="blocks-container">
+        <div class="section-center-text">
+            <p>A collection of beautifully crafted wallpapers designed to the Apple iPhone X.</p>
+            <a href="">View all wallpapers</a>
+        </div>
+    </div>
+</section>
+{% endcomment %}
+    
+{% endblock %}
+
