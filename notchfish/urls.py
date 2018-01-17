@@ -3,5 +3,5 @@ from django.conf import settings
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.home, name='home', app_name='notchfish'),
+    url(r'^$', views.home, name='home'),
 ]
