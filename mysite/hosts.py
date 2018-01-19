@@ -1,7 +1,7 @@
 from django.conf import settings
 from django_hosts import patterns, host
 
-host_patterns = patterns('path.to',
+host_patterns = patterns('',
 #    host(r'www', settings.ROOT_URLCONF, name='www'),  # redirect 
 #    host(r'prueba', settings.ROOT_URLCONF, name='prueba'),
     host(r'notchfish', 'notchfish.urls', name='notchfish'), #subdomain
