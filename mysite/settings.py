@@ -24,7 +24,7 @@ SECRET_KEY = 'zh4vyn%(k1%wa5&!#5-dnm9cn)&%x8y0qobt8z9@h$*f_d1=cq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['.jennifersd.com', 'jennifersd.com' , 'www.jennifersd.com'  , 'notchfish.jennifersd.com' , 'prueba.jennifersd.com'  , '127.0.0.1' , '178.62.125.104' , '10.211.55.4']
+ALLOWED_HOSTS = ['*', '.jennifersd.com', 'jennifersd.com' , 'www.jennifersd.com'  , 'notchfish.jennifersd.com' , 'prueba.jennifersd.com'  , '127.0.0.1' , '178.62.125.104' , '10.211.55.4']
 # Application definition
 
 INSTALLED_APPS = (
@@ -58,8 +58,8 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'mysite.urls'
 ROOT_HOSTCONF = 'mysite.hosts'
-DEFAULT_HOST = 'www'
-DEFAULT_REDIRECT_URL = 'http://www.jennifersd.com:8000'
+DEFAULT_HOST = ''
+DEFAULT_REDIRECT_URL = 'http://jennifersd.com:8000'
 SITE_URL = 'jennifersd.com'
 
 
