@@ -58,7 +58,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'mysite.urls'
 ROOT_HOSTCONF = 'mysite.hosts'
-DEFAULT_HOST = ''
+DEFAULT_HOST = 'www'
 DEFAULT_REDIRECT_URL = 'http://jennifersd.com:8000'
 SITE_URL = 'jennifersd.com'
 

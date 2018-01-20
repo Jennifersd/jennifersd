@@ -3,7 +3,7 @@ from django_hosts import patterns, host
 
 host_patterns = patterns('',
 #    host(r'www', settings.ROOT_URLCONF, name='www'),  # redirect 
-    host(r'notchfish', settings.ROOT_URLCONF, name='notchfish'),
+    host(r'notchfish', 'notchfish.urls', name='notchfish'),
 #    host(r'notchfish', 'notchfish.urls', name='notchfish'), #subdomain
 #    host(r'(?!www).*', 'mysite.hostsconf.urls', name='wildcard'),
 )
