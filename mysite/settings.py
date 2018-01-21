@@ -43,7 +43,7 @@ INSTALLED_APPS = (
     'django_baseurl',
 ) 
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'django_hosts.middleware.HostsRequestMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
