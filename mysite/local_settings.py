@@ -6,4 +6,4 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-SITE_URL = 'jennifersd.com:8000'
+SITE_URL = 'jennifersd.com'
