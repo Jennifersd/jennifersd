@@ -62,7 +62,6 @@ DEFAULT_HOST = 'www'
 DEFAULT_REDIRECT_URL = 'http://jennifersd.com'
 SITE_URL = 'jennifersd.com'
 
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
