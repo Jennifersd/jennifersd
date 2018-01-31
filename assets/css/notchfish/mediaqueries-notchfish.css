@@ -138,7 +138,7 @@ Tablet CSS
         display: block !important;
     }
 
-    .wallpaper:nth-child(3n+3), .wallpaper:nth-child(3n+4) {
+    .wallpaper:nth-child(3n+2), .wallpaper:nth-child(3n+3), .wallpaper:nth-child(3n+4) {
         -webkit-transform: inherit !important;
         -moz-transform: inherit !important;
         transform: inherit !important;
