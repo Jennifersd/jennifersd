@@ -73,8 +73,8 @@
     <div class="bg-center-wallpaper">
         <div class="wallpapers">
             <div class="blocks-container">
-                {% comment %} {% for product in products|slice:"1:" %} {% endcomment %}
-                {% for product in products %}
+                {% for product in products|slice:"1:" %} 
+                {% comment %}{% for product in products %}{% endcomment %}
                 <div class="wallpaper {% if product.premium  %}premium {% endif %}">
                     {% if product.premium  %}
                         <div class="premium-wallpaper">
